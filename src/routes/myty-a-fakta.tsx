@@ -7,7 +7,7 @@ export const Route = createFileRoute("/myty-a-fakta")({
 });
 
 const items = [
-  { m: "ODS zkracuje vzdělávání a bere dětem dětství.", f: "Povinné vzdělávání naopak prodlužujeme z 9 na 10 let (8+2), jen rušíme neefektivní čekárnu v 9. třídě." },
+  { m: "8+2 zkracuje vzdělávání a bere dětem dětství.", f: "Povinné vzdělávání naopak prodlužujeme z 9 na 10 let (8+2), jen rušíme neefektivní čekárnu v 9. třídě." },
   { m: "Rušíte inkluzi a segregujete děti.", f: "Inkluzi nerušíme, ale racionalizujeme. Místo pasivních asistentů zavádíme průchozí třídy a mobilní krizové týmy po vzoru Finska." },
   { m: "Optimalizace sítě znamená rušení vesnických škol.", f: "Fyzické budovy pro menší děti v obcích zůstávají, slučujeme pouze ředitelství a zbytečnou administrativu." },
 ];
