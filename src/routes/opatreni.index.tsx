@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero, Section, meta } from "@/components/site";
 import { pillars, timeline } from "@/lib/content";
+import schema from "@/assets/schema-8plus2.jpg.asset.json";
 
 export const Route = createFileRoute("/opatreni/")({
   head: () => meta("10 opatření Reformy 8PLUS2", "Tři pilíře a deset opatření reformy školství: model 8+2, cykly 3+3+2, Malá a Velká maturita, revize inkluze, konec PHmax a další."),
@@ -29,6 +30,9 @@ function Page() {
         </Section>
       ))}
       <Section kicker="Cesta dítěte" title={<>Od <span className="text-mint">6</span> do <span className="text-mint">18</span> let</>}>
+        <a href={schema.url} target="_blank" rel="noreferrer" className="mb-16 block overflow-hidden rounded bg-foreground">
+          <img src={schema.url} alt="Schéma Reformy 8PLUS2: modulární architektura regionálního vzdělávání od 3 do 18 let" className="h-auto w-full" loading="lazy" />
+        </a>
         <ol className="grid gap-8 md:grid-cols-5">
           {timeline.map((s) => (
             <li key={s.age} className="border-t-2 border-mint pt-6">
