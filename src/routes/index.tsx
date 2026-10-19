@@ -45,6 +45,7 @@ function Index() {
           <div className="space-y-6 text-xl">
             <p>Česká republika definitivně vyčerpala svůj model růstu založený na levné práci a energiích. Naší jedinou skutečnou a strategickou surovinou pro éru umělé inteligence jsou mozky našich lidí. Přesto stát stále plýtvá lidským kapitálem i veřejnými prostředky v systému, který ustrnul v devadesátých letech.</p>
             <p className="text-muted-foreground">Předkládáme ucelenou architekturu 10 klíčových opatření rozdělených do tří strategických pilířů – konkrétní, daty podloženou mapu kroků, která zkrátí neefektivní pobyt mladých lidí ve vzdělávacím systému, propojí školy s reálnou ekonomikou a zastaví plýtvání veřejnými penězi.</p>
+            <img src={signature.url} alt="Podpis Renáty Zajíčkové" className="h-auto w-56 md:w-64" />
             <p className="font-bold">Mgr. Renáta Zajíčková<br /><span className="font-normal text-muted-foreground">Stínová ministryně školství za ODS</span></p>
           </div>
         </div>
