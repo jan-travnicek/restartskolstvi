@@ -6,6 +6,7 @@ const nav = [
   { to: "/opatreni", label: "10 opatření" },
   { to: "/pro-koho", label: "Co mi reforma přinese" },
   { to: "/data", label: "Data místo dojmů" },
+  { to: "/odborna-opora", label: "Odborná opora" },
   { to: "/myty-a-fakta", label: "Mýty vs. fakta" },
   { to: "/aktuality", label: "Aktuality" },
 ] as const;

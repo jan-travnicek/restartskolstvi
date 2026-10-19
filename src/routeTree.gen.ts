@@ -13,8 +13,10 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AktualityRouteImport } from './routes/aktuality'
 import { Route as DataRouteImport } from './routes/data'
 import { Route as MytyAFaktaRouteImport } from './routes/myty-a-fakta'
-import { Route as OpatreniRouteImport } from './routes/opatreni'
+import { Route as OdbornaOporaRouteImport } from './routes/odborna-opora'
 import { Route as ProKohoRouteImport } from './routes/pro-koho'
+import { Route as OpatreniIndexRouteImport } from './routes/opatreni.index'
+import { Route as OpatreniSlugRouteImport } from './routes/opatreni.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -36,14 +38,24 @@ const MytyAFaktaRoute = MytyAFaktaRouteImport.update({
   path: '/myty-a-fakta',
   getParentRoute: () => rootRouteImport,
 } as any)
-const OpatreniRoute = OpatreniRouteImport.update({
-  id: '/opatreni',
-  path: '/opatreni',
+const OdbornaOporaRoute = OdbornaOporaRouteImport.update({
+  id: '/odborna-opora',
+  path: '/odborna-opora',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProKohoRoute = ProKohoRouteImport.update({
   id: '/pro-koho',
   path: '/pro-koho',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OpatreniIndexRoute = OpatreniIndexRouteImport.update({
+  id: '/opatreni/',
+  path: '/opatreni/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OpatreniSlugRoute = OpatreniSlugRouteImport.update({
+  id: '/opatreni/$slug',
+  path: '/opatreni/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -52,16 +64,20 @@ export interface FileRoutesByFullPath {
   '/aktuality': typeof AktualityRoute
   '/data': typeof DataRoute
   '/myty-a-fakta': typeof MytyAFaktaRoute
-  '/opatreni': typeof OpatreniRoute
+  '/odborna-opora': typeof OdbornaOporaRoute
   '/pro-koho': typeof ProKohoRoute
+  '/opatreni/$slug': typeof OpatreniSlugRoute
+  '/opatreni/': typeof OpatreniIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/aktuality': typeof AktualityRoute
   '/data': typeof DataRoute
   '/myty-a-fakta': typeof MytyAFaktaRoute
-  '/opatreni': typeof OpatreniRoute
+  '/odborna-opora': typeof OdbornaOporaRoute
   '/pro-koho': typeof ProKohoRoute
+  '/opatreni/$slug': typeof OpatreniSlugRoute
+  '/opatreni': typeof OpatreniIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -69,23 +85,42 @@ export interface FileRoutesById {
   '/aktuality': typeof AktualityRoute
   '/data': typeof DataRoute
   '/myty-a-fakta': typeof MytyAFaktaRoute
-  '/opatreni': typeof OpatreniRoute
+  '/odborna-opora': typeof OdbornaOporaRoute
   '/pro-koho': typeof ProKohoRoute
+  '/opatreni/$slug': typeof OpatreniSlugRoute
+  '/opatreni/': typeof OpatreniIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/aktuality' | '/data' | '/myty-a-fakta' | '/opatreni' | '/pro-koho'
+    | '/'
+    | '/aktuality'
+    | '/data'
+    | '/myty-a-fakta'
+    | '/odborna-opora'
+    | '/pro-koho'
+    | '/opatreni/$slug'
+    | '/opatreni/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/aktuality' | '/data' | '/myty-a-fakta' | '/opatreni' | '/pro-koho'
+  to:
+    | '/'
+    | '/aktuality'
+    | '/data'
+    | '/myty-a-fakta'
+    | '/odborna-opora'
+    | '/pro-koho'
+    | '/opatreni/$slug'
+    | '/opatreni'
   id:
     | '__root__'
     | '/'
     | '/aktuality'
     | '/data'
     | '/myty-a-fakta'
-    | '/opatreni'
+    | '/odborna-opora'
     | '/pro-koho'
+    | '/opatreni/$slug'
+    | '/opatreni/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -93,8 +128,10 @@ export interface RootRouteChildren {
   AktualityRoute: typeof AktualityRoute
   DataRoute: typeof DataRoute
   MytyAFaktaRoute: typeof MytyAFaktaRoute
-  OpatreniRoute: typeof OpatreniRoute
+  OdbornaOporaRoute: typeof OdbornaOporaRoute
   ProKohoRoute: typeof ProKohoRoute
+  OpatreniSlugRoute: typeof OpatreniSlugRoute
+  OpatreniIndexRoute: typeof OpatreniIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -127,11 +164,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MytyAFaktaRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/opatreni': {
-      id: '/opatreni'
-      path: '/opatreni'
-      fullPath: '/opatreni'
-      preLoaderRoute: typeof OpatreniRouteImport
+    '/odborna-opora': {
+      id: '/odborna-opora'
+      path: '/odborna-opora'
+      fullPath: '/odborna-opora'
+      preLoaderRoute: typeof OdbornaOporaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pro-koho': {
@@ -139,6 +176,20 @@ declare module '@tanstack/react-router' {
       path: '/pro-koho'
       fullPath: '/pro-koho'
       preLoaderRoute: typeof ProKohoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/opatreni/': {
+      id: '/opatreni/'
+      path: '/opatreni'
+      fullPath: '/opatreni/'
+      preLoaderRoute: typeof OpatreniIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/opatreni/$slug': {
+      id: '/opatreni/$slug'
+      path: '/opatreni/$slug'
+      fullPath: '/opatreni/$slug'
+      preLoaderRoute: typeof OpatreniSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -149,8 +200,10 @@ const rootRouteChildren: RootRouteChildren = {
   AktualityRoute: AktualityRoute,
   DataRoute: DataRoute,
   MytyAFaktaRoute: MytyAFaktaRoute,
-  OpatreniRoute: OpatreniRoute,
+  OdbornaOporaRoute: OdbornaOporaRoute,
   ProKohoRoute: ProKohoRoute,
+  OpatreniSlugRoute: OpatreniSlugRoute,
+  OpatreniIndexRoute: OpatreniIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
