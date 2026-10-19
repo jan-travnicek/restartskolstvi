@@ -85,9 +85,11 @@ function Index() {
             </div>
           ))}
         </div>
-        <a href={schema.url} target="_blank" rel="noreferrer" className="mt-16 block overflow-hidden rounded bg-foreground">
-          <img src={schema.url} alt="Schéma Reformy 8PLUS2: modulární architektura regionálního vzdělávání od 3 do 18 let" className="h-auto w-full" loading="lazy" />
-        </a>
+        <SchemaViewer
+          src={schema.url}
+          alt="Schéma Reformy 8PLUS2: modulární architektura regionálního vzdělávání od 3 do 18 let"
+          className="mt-16"
+        />
         <div className="mt-12"><NextLink to="/opatreni">Všech 10 opatření podrobně</NextLink></div>
       </Section>
 

@@ -30,9 +30,11 @@ function Page() {
         </Section>
       ))}
       <Section kicker="Cesta dítěte" title={<>Od <span className="text-mint">6</span> do <span className="text-mint">18</span> let</>}>
-        <a href={schema.url} target="_blank" rel="noreferrer" className="mb-16 block overflow-hidden rounded bg-foreground">
-          <img src={schema.url} alt="Schéma Reformy 8PLUS2: modulární architektura regionálního vzdělávání od 3 do 18 let" className="h-auto w-full" loading="lazy" />
-        </a>
+        <SchemaViewer
+          src={schema.url}
+          alt="Schéma Reformy 8PLUS2: modulární architektura regionálního vzdělávání od 3 do 18 let"
+          className="mb-16"
+        />
         <ol className="grid gap-8 md:grid-cols-5">
           {timeline.map((s) => (
             <li key={s.age} className="border-t-2 border-mint pt-6">
