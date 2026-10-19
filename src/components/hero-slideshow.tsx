@@ -30,7 +30,7 @@ export function HeroSlideshow() {
 
   return (
     <section
-      className="relative flex min-h-[60svh] flex-col justify-end overflow-hidden"
+      className="relative flex min-h-[44svh] flex-col justify-end overflow-hidden md:min-h-[60svh]"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       aria-roledescription="carousel"
