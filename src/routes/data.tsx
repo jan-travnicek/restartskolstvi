@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section, meta } from "@/components/site";
+import { economics } from "@/lib/content";
 
 export const Route = createFileRoute("/data")({
   head: () => meta("Data místo dojmů – Reforma 8PLUS2", "Studie CETA a výstupy PAQ Research ke stažení. Srovnání vize ODS a přístupu ANO."),
@@ -22,6 +23,28 @@ function Page() {
   return (
     <>
       <PageHero kicker="Pro média a odborníky" title={<>Data místo<br /><span className="text-mint">dojmů</span></>} />
+      <Section kicker="Ekonomické dopady" title={<>Reforma 8+2 <span className="text-mint">se vyplatí</span></>}>
+        <p className="-mt-6 mb-12 max-w-3xl text-xl">Reforma 8+2 není výdajem, ale strukturální investicí s mimořádně rychlou a prokazatelnou návratností. Data CETA a PAQ Research ukazují, že udržování současného stavu je fiskálně neudržitelné.</p>
+        <div className="grid gap-px bg-foreground/15 sm:grid-cols-2 lg:grid-cols-4">
+          {economics.map((e) => (
+            <div key={e.t} className="bg-navy/60 p-8">
+              <p className="display text-4xl text-mint">{e.v}</p>
+              <p className="mt-4 text-xl font-extrabold">{e.t}</p>
+              <p className="mt-2 text-muted-foreground">{e.d}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-12 grid gap-8 bg-navy/70 p-10 md:grid-cols-2">
+          <div>
+            <p className="font-semibold uppercase tracking-widest text-mint">Celková roční bilance</p>
+            <p className="mt-4 text-xl">Konzervativní scénář přinese veřejným rozpočtům okamžitý pozitivní impuls. V optimistickém scénáři jde o sumu přesahující 16,2 mld. Kč každý rok.</p>
+          </div>
+          <div className="flex items-end gap-8">
+            <div><p className="text-sm font-semibold uppercase text-muted-foreground">Konzervativně</p><p className="display text-6xl text-mint">+9,3 mld.</p></div>
+            <div><p className="text-sm font-semibold uppercase text-muted-foreground">Optimisticky</p><p className="display text-6xl">+16,2 mld.</p></div>
+          </div>
+        </div>
+      </Section>
       <Section kicker="Ke stažení">
         <div className="grid gap-4 md:grid-cols-2">
           {studies.map((s) => (

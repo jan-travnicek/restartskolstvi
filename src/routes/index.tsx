@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { NextLink, Section, meta } from "@/components/site";
 import { pillars } from "@/lib/content";
 
@@ -46,6 +46,17 @@ function Index() {
         </div>
       </section>
 
+      <Section kicker="Úvodem">
+        <div className="grid gap-12 md:grid-cols-[1fr_2fr]">
+          <p className="display text-5xl md:text-6xl">Mozky našich lidí jsou <span className="text-mint">jedinou strategickou surovinou</span></p>
+          <div className="space-y-6 text-xl">
+            <p>Česká republika definitivně vyčerpala svůj model růstu založený na levné práci a energiích. Naší jedinou skutečnou a strategickou surovinou pro éru umělé inteligence jsou mozky našich lidí. Přesto stát stále plýtvá lidským kapitálem i veřejnými prostředky v systému, který ustrnul v devadesátých letech.</p>
+            <p className="text-muted-foreground">Předkládáme ucelenou architekturu 10 klíčových opatření rozdělených do tří strategických pilířů – konkrétní, daty podloženou mapu kroků, která zkrátí neefektivní pobyt mladých lidí ve vzdělávacím systému, propojí školy s reálnou ekonomikou a zastaví plýtvání veřejnými penězi.</p>
+            <p className="font-bold">Mgr. Renáta Zajíčková<br /><span className="font-normal text-muted-foreground">Stínová ministryně školství za ODS</span></p>
+          </div>
+        </div>
+      </Section>
+
       <Section kicker="Diagnóza" title={<>Proč model <span className="text-mint">9+0</span> selhává</>}>
         <div className="grid gap-12 md:grid-cols-3">
           {diagnosis.map((d) => (
@@ -64,7 +75,11 @@ function Index() {
               <p className="display text-6xl text-mint">{p.id}</p>
               <p className="mt-2 text-2xl font-extrabold">{p.name}</p>
               <ul className="mt-4 space-y-1 text-muted-foreground">
-                {p.measures.map((m) => <li key={m.n}>{m.n}. {m.t}</li>)}
+                {p.measures.map((m) => (
+                  <li key={m.n}>
+                    <Link to="/opatreni/$slug" params={{ slug: m.slug }} className="hover:text-mint">{m.n}. {m.t}</Link>
+                  </li>
+                ))}
               </ul>
             </div>
           ))}
@@ -76,6 +91,7 @@ function Index() {
         <div className="flex flex-col gap-4">
           <NextLink to="/pro-koho">Co reforma přinese rodičům, ředitelům a firmám</NextLink>
           <NextLink to="/data">Studie CETA a PAQ Research</NextLink>
+          <NextLink to="/odborna-opora">Od konceptu k legislativě</NextLink>
           <NextLink to="/myty-a-fakta">Mýty vs. fakta</NextLink>
         </div>
       </Section>
