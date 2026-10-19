@@ -30,7 +30,7 @@ export function HeroSlideshow() {
 
   return (
     <section
-      className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden"
+      className="relative flex min-h-[60svh] flex-col justify-end overflow-hidden"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       aria-roledescription="carousel"
@@ -52,21 +52,22 @@ export function HeroSlideshow() {
       {/* Překryv pro čitelnost v souladu s identitou webu */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-navy via-navy/50 to-transparent" />
 
-      <div className="relative mx-auto w-full max-w-7xl px-6 pb-20 pt-40 md:px-16 md:pb-24">
-        <h1 className="text-[clamp(4rem,11vw,10rem)] text-mint">
-          Reforma
-          <br />
-          8PLUS2
-        </h1>
-        <p className="mt-6 max-w-2xl text-2xl font-extrabold leading-tight md:text-4xl">
-          Místo devítky{"\u00a0"}
-          <br />
-          dva roky na střední{"\u00a0"}
-          <br />
-          <span className="text-mint">pro všechny děti</span>
-        </p>
-        <div className="mt-8 flex flex-wrap items-center gap-6">
-          <Link
+      <div className="relative mx-auto w-full max-w-7xl px-6 pb-24 pt-28 md:px-16 md:pb-28">
+        <div className="grid items-end gap-8 md:grid-cols-2 md:gap-16">
+          <h1 className="order-1 text-[clamp(4rem,11vw,10rem)] text-mint md:col-start-1 md:row-start-1">
+            Reforma
+            <br />
+            8PLUS2
+          </h1>
+          <p className="order-2 text-2xl font-extrabold leading-tight md:col-start-2 md:row-span-2 md:row-start-1 md:self-end md:text-right md:text-3xl lg:text-4xl">
+            Místo devítky{"\u00a0"}
+            <br />
+            dva roky na střední{"\u00a0"}
+            <br />
+            <span className="text-mint">pro všechny děti</span>
+          </p>
+          <div className="order-3 mt-2 flex flex-wrap items-center gap-6 md:col-start-1 md:row-start-2">
+            <Link
             to="/opatreni"
             className="inline-flex items-center gap-3 rounded bg-mint px-8 py-4 text-lg font-extrabold text-navy transition-transform hover:-translate-y-0.5"
           >
@@ -77,7 +78,8 @@ export function HeroSlideshow() {
           </Link>
           <Link to="/data" className="text-lg font-bold text-mint underline-offset-4 hover:underline">
             Data místo dojmů
-          </Link>
+            </Link>
+          </div>
         </div>
       </div>
 
