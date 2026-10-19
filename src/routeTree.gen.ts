@@ -10,33 +10,91 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AktualityRouteImport } from './routes/aktuality'
+import { Route as DataRouteImport } from './routes/data'
+import { Route as MytyAFaktaRouteImport } from './routes/myty-a-fakta'
+import { Route as OpatreniRouteImport } from './routes/opatreni'
+import { Route as ProKohoRouteImport } from './routes/pro-koho'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AktualityRoute = AktualityRouteImport.update({
+  id: '/aktuality',
+  path: '/aktuality',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DataRoute = DataRouteImport.update({
+  id: '/data',
+  path: '/data',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MytyAFaktaRoute = MytyAFaktaRouteImport.update({
+  id: '/myty-a-fakta',
+  path: '/myty-a-fakta',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OpatreniRoute = OpatreniRouteImport.update({
+  id: '/opatreni',
+  path: '/opatreni',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProKohoRoute = ProKohoRouteImport.update({
+  id: '/pro-koho',
+  path: '/pro-koho',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/aktuality': typeof AktualityRoute
+  '/data': typeof DataRoute
+  '/myty-a-fakta': typeof MytyAFaktaRoute
+  '/opatreni': typeof OpatreniRoute
+  '/pro-koho': typeof ProKohoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/aktuality': typeof AktualityRoute
+  '/data': typeof DataRoute
+  '/myty-a-fakta': typeof MytyAFaktaRoute
+  '/opatreni': typeof OpatreniRoute
+  '/pro-koho': typeof ProKohoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/aktuality': typeof AktualityRoute
+  '/data': typeof DataRoute
+  '/myty-a-fakta': typeof MytyAFaktaRoute
+  '/opatreni': typeof OpatreniRoute
+  '/pro-koho': typeof ProKohoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    '/' | '/aktuality' | '/data' | '/myty-a-fakta' | '/opatreni' | '/pro-koho'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/aktuality' | '/data' | '/myty-a-fakta' | '/opatreni' | '/pro-koho'
+  id:
+    | '__root__'
+    | '/'
+    | '/aktuality'
+    | '/data'
+    | '/myty-a-fakta'
+    | '/opatreni'
+    | '/pro-koho'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AktualityRoute: typeof AktualityRoute
+  DataRoute: typeof DataRoute
+  MytyAFaktaRoute: typeof MytyAFaktaRoute
+  OpatreniRoute: typeof OpatreniRoute
+  ProKohoRoute: typeof ProKohoRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +106,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/aktuality': {
+      id: '/aktuality'
+      path: '/aktuality'
+      fullPath: '/aktuality'
+      preLoaderRoute: typeof AktualityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/data': {
+      id: '/data'
+      path: '/data'
+      fullPath: '/data'
+      preLoaderRoute: typeof DataRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/myty-a-fakta': {
+      id: '/myty-a-fakta'
+      path: '/myty-a-fakta'
+      fullPath: '/myty-a-fakta'
+      preLoaderRoute: typeof MytyAFaktaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/opatreni': {
+      id: '/opatreni'
+      path: '/opatreni'
+      fullPath: '/opatreni'
+      preLoaderRoute: typeof OpatreniRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pro-koho': {
+      id: '/pro-koho'
+      path: '/pro-koho'
+      fullPath: '/pro-koho'
+      preLoaderRoute: typeof ProKohoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AktualityRoute: AktualityRoute,
+  DataRoute: DataRoute,
+  MytyAFaktaRoute: MytyAFaktaRoute,
+  OpatreniRoute: OpatreniRoute,
+  ProKohoRoute: ProKohoRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
