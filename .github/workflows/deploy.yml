@@ -20,7 +20,7 @@ jobs:
         run: bun install
 
       - name: Sestaveni projektu (Build)
-        run: bun x vite build
+        run: bun run build
 
       - name: Nahrani na Webglobe pres FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
