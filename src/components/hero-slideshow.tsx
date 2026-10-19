@@ -63,7 +63,11 @@ export function HeroSlideshow() {
           8PLUS2
         </h1>
         <p className="mt-6 max-w-2xl text-2xl font-extrabold leading-tight md:text-4xl">
-          Místo devítky dva roky na střední <span className="text-mint">pro všechny děti</span>
+          Místo devítky{"\u00a0"}
+          <br />
+          dva roky na střední{"\u00a0"}
+          <br />
+          <span className="text-mint">pro všechny děti</span>
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-6">
           <Link
