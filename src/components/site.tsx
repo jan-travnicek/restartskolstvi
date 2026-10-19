@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import logo from "@/assets/ods-logo.png.asset.json";
-import { audiences } from "@/lib/audiences";
 
 const nav = [
   { to: "/opatreni", label: "10 opatření" },
@@ -12,27 +11,6 @@ const nav = [
   { to: "/aktuality", label: "Aktuality" },
 ] as const;
 
-function AudienceMenu() {
-  return (
-    <div className="group relative">
-      <Link to="/pro-koho" className="opacity-80 hover:opacity-100" activeProps={{ className: "text-mint opacity-100" }}>
-        Pro koho <span aria-hidden>▾</span>
-      </Link>
-      <div className="invisible absolute left-0 top-full z-50 pt-3 opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-        <ul className="min-w-56 rounded-sm bg-navy py-2">
-          {audiences.map((a) => (
-            <li key={a.id}>
-              <Link to="/pro-koho" search={{ skupina: a.id }} className="block px-4 py-2 hover:text-mint">
-                {a.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-}
-
 export function SiteHeader() {
   return (
     <header className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6 px-6 py-8 md:px-16">
@@ -40,15 +18,11 @@ export function SiteHeader() {
         Reforma<br />školství
       </Link>
       <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold">
-        {nav.map((n) =>
-          n.to === "/pro-koho" ? (
-            <AudienceMenu key={n.to} />
-          ) : (
-            <Link key={n.to} to={n.to} className="opacity-80 hover:opacity-100" activeProps={{ className: "text-mint opacity-100" }}>
-              {n.label}
-            </Link>
-          ),
-        )}
+        {nav.map((n) => (
+          <Link key={n.to} to={n.to} className="opacity-80 hover:opacity-100" activeProps={{ className: "text-mint opacity-100" }}>
+            {n.label}
+          </Link>
+        ))}
       </nav>
       <img src={logo.url} alt="ODS" className="h-14 w-auto" />
     </header>
