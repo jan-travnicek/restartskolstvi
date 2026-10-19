@@ -1,11 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import hero1 from "@/assets/rz-hero-1.jpg.asset.json";
 import hero2 from "@/assets/rz-hero-2.jpg.asset.json";
 import hero3 from "@/assets/rz-hero-3.jpg.asset.json";
 
 const SLIDES = [
-  { src: hero1.url, alt: "Renáta Zajíčková, stínová ministryně školství za ODS" },
   { src: hero2.url, alt: "Renáta Zajíčková v parku s tabletem" },
   { src: hero3.url, alt: "Renáta Zajíčková se žáky ve školní třídě" },
 ];
@@ -52,7 +50,7 @@ export function HeroSlideshow() {
       ))}
 
       {/* Překryv pro čitelnost v souladu s identitou webu */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-navy/30" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-navy via-navy/50 to-transparent" />
 
       <div className="relative mx-auto w-full max-w-7xl px-6 pb-20 pt-40 md:px-16 md:pb-24">
         <h1 className="text-[clamp(4rem,11vw,10rem)] text-mint">
