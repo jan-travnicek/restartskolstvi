@@ -18,7 +18,7 @@ export const Route = createFileRoute("/opatreni/$slug")({
 
 function Page() {
   const { i } = Route.useLoaderData();
-  const m = allMeasures[i];
+  const m = allMeasures[i]!;
   const prev = allMeasures[i - 1];
   const next = allMeasures[i + 1];
   return (
