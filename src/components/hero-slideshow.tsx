@@ -52,9 +52,9 @@ export function HeroSlideshow() {
       {/* Překryv pro čitelnost v souladu s identitou webu */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-navy via-navy/50 to-transparent" />
 
-      <div className="relative mx-auto w-full max-w-7xl px-6 pb-24 pt-28 md:px-16 md:pb-28">
+      <div className="relative mx-auto w-full max-w-7xl px-6 pb-20 pt-16 md:px-16 md:pt-20 md:pb-24">
         <div className="grid items-end gap-8 md:grid-cols-2 md:gap-16">
-          <h1 className="order-1 text-[clamp(4rem,11vw,10rem)] text-mint md:col-start-1 md:row-start-1">
+          <h1 className="order-1 text-[clamp(3.25rem,8.5vw,8rem)] text-mint md:col-start-1 md:row-start-1">
             Reforma
             <br />
             8PLUS2
