@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
+import logo from "@/assets/ods-logo.png.asset.json";
 
 const nav = [
   { to: "/opatreni", label: "10 opatření" },
@@ -22,7 +23,7 @@ export function SiteHeader() {
           </Link>
         ))}
       </nav>
-      <span className="text-3xl font-extrabold">ODS</span>
+      <img src={logo.url} alt="ODS" className="h-14 w-auto" />
     </header>
   );
 }
