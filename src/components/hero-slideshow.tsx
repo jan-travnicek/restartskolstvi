@@ -55,9 +55,7 @@ export function HeroSlideshow() {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-navy/30" />
 
       <div className="relative mx-auto w-full max-w-7xl px-6 pb-20 pt-40 md:px-16 md:pb-24">
-        <p className="text-sm font-bold uppercase tracking-[0.25em] text-mint">
-        </p>
-        <h1 className="mt-6 text-[clamp(4rem,11vw,10rem)] text-mint">
+        <h1 className="text-[clamp(4rem,11vw,10rem)] text-mint">
           Reforma
           <br />
           8PLUS2
