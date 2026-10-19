@@ -8,3 +8,7 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Static reform content (pillars, measures, timeline) lives in `src/lib/content.ts`; pages import it so measures stay consistent across pages.
+- Shared header/footer/section primitives live in `src/components/site.tsx` and wrap all routes from `__root.tsx`.
