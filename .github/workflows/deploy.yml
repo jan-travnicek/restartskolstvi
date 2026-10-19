@@ -1,0 +1,37 @@
+name: Deploy na Webglobe (SFTP)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  web-deploy:
+    name: Sestaveni a nahrani na server
+    runs-on: ubuntu-latest
+    steps:
+      - name: Stazeni kodu z GitHubu
+        uses: actions/checkout@v4
+
+      - name: Nastaveni Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Instalace zavislosti
+        run: npm install
+
+      - name: Sestaveni projektu (Build)
+        run: npm run build
+
+      - name: Nahrani na Webglobe pres SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          port: 222
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local_path: './dist/*'
+          remote_path: '/public_html'
+          sftpArgs: '-o ConnectTimeout=60'
