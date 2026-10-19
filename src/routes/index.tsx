@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { NextLink, Section, meta } from "@/components/site";
 import { pillars } from "@/lib/content";
 import schema from "@/assets/schema-8plus2.jpg.asset.json";
+import { SchemaViewer } from "@/components/schema-viewer";
 
 export const Route = createFileRoute("/")({
   head: () => meta("Reforma 8PLUS2 – Restart školství", "Místo devítky dva roky na střední pro všechny děti. Plně vyčíslená modernizace českého školství."),

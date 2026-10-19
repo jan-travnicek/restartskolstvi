@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero, Section, meta } from "@/components/site";
 import { pillars, timeline } from "@/lib/content";
 import schema from "@/assets/schema-8plus2.jpg.asset.json";
+import { SchemaViewer } from "@/components/schema-viewer";
 
 export const Route = createFileRoute("/opatreni/")({
   head: () => meta("10 opatření Reformy 8PLUS2", "Tři pilíře a deset opatření reformy školství: model 8+2, cykly 3+3+2, Malá a Velká maturita, revize inkluze, konec PHmax a další."),
