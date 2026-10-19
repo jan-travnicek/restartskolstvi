@@ -117,9 +117,6 @@ export function SchemaViewer({ src, alt, className = "" }: { src: string; alt: s
           <PlusIcon /> Zvětšit
         </span>
       </button>
-      <p className="mt-3 text-sm text-muted-foreground">
-        Kliknutím se schéma otevře v pop-okně, kde ho lze zvětšit kolečkem myši nebo tlačítky a posouvat tažením.
-      </p>
 
       {open && (
         <div
