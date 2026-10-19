@@ -10,7 +10,7 @@ export const Route = createFileRoute("/opatreni/$slug")({
   },
   head: ({ loaderData }) => {
     if (!loaderData) return { meta: [{ title: "Opatření nenalezeno" }, { name: "robots", content: "noindex" }] };
-    const m = allMeasures[loaderData.i];
+    const m = allMeasures[loaderData.i]!;
     return meta(`${m.n}. ${m.t} – Reforma 8PLUS2`, m.short);
   },
   component: Page,
