@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { NextLink, Section, meta } from "@/components/site";
 import { pillars } from "@/lib/content";
+import schema from "@/assets/schema-8plus2.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => meta("Reforma 8PLUS2 – Restart školství", "Místo devítky dva roky na střední pro všechny děti. Plně vyčíslená modernizace českého školství."),
@@ -84,6 +85,9 @@ function Index() {
             </div>
           ))}
         </div>
+        <a href={schema.url} target="_blank" rel="noreferrer" className="mt-16 block overflow-hidden rounded bg-foreground">
+          <img src={schema.url} alt="Schéma Reformy 8PLUS2: modulární architektura regionálního vzdělávání od 3 do 18 let" className="h-auto w-full" loading="lazy" />
+        </a>
         <div className="mt-12"><NextLink to="/opatreni">Všech 10 opatření podrobně</NextLink></div>
       </Section>
 
