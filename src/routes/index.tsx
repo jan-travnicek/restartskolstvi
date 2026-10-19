@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { NextLink, Section, meta } from "@/components/site";
 import { pillars } from "@/lib/content";
 import schema from "@/assets/schema-8plus2.jpg.asset.json";
+import signature from "@/assets/podpis-rz.png.asset.json";
 import { SchemaViewer } from "@/components/schema-viewer";
 import { HeroSlideshow } from "@/components/hero-slideshow";
 
