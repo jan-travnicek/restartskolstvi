@@ -56,7 +56,6 @@ export function HeroSlideshow() {
 
       <div className="relative mx-auto w-full max-w-7xl px-6 pb-20 pt-40 md:px-16 md:pb-24">
         <p className="text-sm font-bold uppercase tracking-[0.25em] text-mint">
-          Mgr. Renáta Zajíčková · stínová ministryně školství za ODS
         </p>
         <h1 className="mt-6 text-[clamp(4rem,11vw,10rem)] text-mint">
           Reforma
