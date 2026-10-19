@@ -4,15 +4,15 @@ import { pillars } from "@/lib/content";
 import { audiences, audienceIds, type AudienceId } from "@/lib/audiences";
 
 export const Route = createFileRoute("/pro-koho")({
-  validateSearch: (s: Record<string, unknown>): { skupina: AudienceId } => ({
-    skupina: audienceIds.includes(s.skupina as AudienceId) ? (s.skupina as AudienceId) : "rodice",
+  validateSearch: (s: Record<string, unknown>): { skupina?: AudienceId } => ({
+    skupina: audienceIds.includes(s.skupina as AudienceId) ? (s.skupina as AudienceId) : undefined,
   }),
   head: () => meta("Co mi Reforma 8PLUS2 přinese?", "Reforma 8PLUS2 z pohledu rodičů a žáků, ředitelů a starostů, zaměstnavatelů i celého Česka."),
   component: Page,
 });
 
 function Page() {
-  const { skupina } = Route.useSearch();
+  const { skupina = "rodice" } = Route.useSearch();
   const a = audiences.find((x) => x.id === skupina)!;
   return (
     <>
