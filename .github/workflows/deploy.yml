@@ -13,17 +13,14 @@ jobs:
       - name: Stazeni kodu z GitHubu
         uses: actions/checkout@v4
 
-      - name: Nastaveni Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'npm'
+      - name: Nastaveni Bun
+        uses: oven-sh/setup-bun@v2
 
       - name: Instalace zavislosti
-        run: npm install
+        run: bun install
 
       - name: Sestaveni projektu (Build)
-        run: npm run build
+        run: bun run build
 
       - name: Nahrani na Webglobe pres SFTP
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
