@@ -12,3 +12,4 @@
 ## Project rules
 - Static reform content (pillars, measures, timeline) lives in `src/lib/content.ts`; pages import it so measures stay consistent across pages.
 - Shared header/footer/section primitives live in `src/components/site.tsx` and wrap all routes from `__root.tsx`.
+- Large diagrams/photos open through `SchemaViewer` (`src/components/schema-viewer.tsx`) instead of a plain link to the asset file, so readers get one consistent zoom/pan popup rather than a browser tab.
