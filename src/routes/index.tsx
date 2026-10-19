@@ -3,6 +3,7 @@ import { NextLink, Section, meta } from "@/components/site";
 import { pillars } from "@/lib/content";
 import schema from "@/assets/schema-8plus2.jpg.asset.json";
 import { SchemaViewer } from "@/components/schema-viewer";
+import { HeroSlideshow } from "@/components/hero-slideshow";
 
 export const Route = createFileRoute("/")({
   head: () => meta("Reforma 8PLUS2 – Restart školství", "Místo devítky dva roky na střední pro všechny děti. Plně vyčíslená modernizace českého školství."),
@@ -25,17 +26,7 @@ const diagnosis = [
 function Index() {
   return (
     <>
-      <section className="mx-auto grid max-w-7xl items-end gap-12 px-6 pb-16 pt-12 md:grid-cols-2 md:px-16">
-        <h1 className="text-[clamp(5rem,13vw,12rem)] text-mint">Reforma<br />8PLUS2</h1>
-        <div className="space-y-8">
-          <p className="text-4xl font-extrabold leading-[1.05] md:text-5xl">
-            Místo devítky<br />dva roky na střední<br /><span className="text-mint">pro všechny děti</span>
-          </p>
-          <p className="max-w-xl text-lg text-muted-foreground">
-            Konec „drahé čekárny“ na základních školách a konec lití peněz do děravé nádrže. Vzdělávání není sociální dávka, ale strategická investice do ekonomiky a bezpečnosti státu.
-          </p>
-        </div>
-      </section>
+      <HeroSlideshow />
 
       <section className="mx-auto max-w-7xl px-6 pb-20 md:px-16">
         <div className="grid gap-px bg-foreground/15 sm:grid-cols-2 lg:grid-cols-4">
