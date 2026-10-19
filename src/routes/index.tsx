@@ -4,7 +4,6 @@ import { pillars } from "@/lib/content";
 import schema from "@/assets/schema-8plus2.jpg.asset.json";
 import { SchemaViewer } from "@/components/schema-viewer";
 import { HeroSlideshow } from "@/components/hero-slideshow";
-import podpis from "@/assets/podpis.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => meta("Reforma 8PLUS2 – Restart školství", "Místo devítky dva roky na střední pro všechny děti. Plně vyčíslená modernizace českého školství."),
@@ -46,7 +45,6 @@ function Index() {
           <div className="space-y-6 text-xl">
             <p>Česká republika definitivně vyčerpala svůj model růstu založený na levné práci a energiích. Naší jedinou skutečnou a strategickou surovinou pro éru umělé inteligence jsou mozky našich lidí. Přesto stát stále plýtvá lidským kapitálem i veřejnými prostředky v systému, který ustrnul v devadesátých letech.</p>
             <p className="text-muted-foreground">Předkládáme ucelenou architekturu 10 klíčových opatření rozdělených do tří strategických pilířů – konkrétní, daty podloženou mapu kroků, která zkrátí neefektivní pobyt mladých lidí ve vzdělávacím systému, propojí školy s reálnou ekonomikou a zastaví plýtvání veřejnými penězi.</p>
-            <img src={podpis.url} alt="Podpis Renáty Zajíčkové" className="h-auto w-56 max-w-full" loading="lazy" />
             <p className="font-bold">Mgr. Renáta Zajíčková<br /><span className="font-normal text-muted-foreground">Stínová ministryně školství za ODS</span></p>
           </div>
         </div>
