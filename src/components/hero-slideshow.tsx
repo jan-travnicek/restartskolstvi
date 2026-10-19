@@ -66,9 +66,6 @@ export function HeroSlideshow() {
         <p className="mt-6 max-w-2xl text-2xl font-extrabold leading-tight md:text-4xl">
           Místo devítky dva roky na střední <span className="text-mint">pro všechny děti</span>
         </p>
-        <p className="mt-4 max-w-xl text-lg text-muted-foreground">
-          Konec „drahé čekárny“ na základních školách a konec lití peněz do děravé nádrže. Vzdělávání není sociální dávka, ale strategická investice do ekonomiky a bezpečnosti státu.
-        </p>
         <div className="mt-8 flex flex-wrap items-center gap-6">
           <Link
             to="/opatreni"
