@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { meta } from "@/components/site";
 import { allMeasures } from "@/lib/content";
+import { audiences, measureCopy, useAudience } from "@/lib/audiences";
 
 export const Route = createFileRoute("/opatreni/$slug")({
   loader: ({ params }) => {
@@ -18,7 +19,10 @@ export const Route = createFileRoute("/opatreni/$slug")({
 
 function Page() {
   const { i } = Route.useLoaderData();
+  const { audience } = useAudience();
   const m = allMeasures[i]!;
+  const copy = measureCopy[audience][m.slug];
+  const label = audiences.find((a) => a.id === audience)!.label;
   const prev = allMeasures[i - 1];
   const next = allMeasures[i + 1];
   return (
@@ -29,9 +33,15 @@ function Page() {
         <span className="display text-[clamp(8rem,18vw,16rem)] leading-[0.8] text-mint">{String(m.n).padStart(2, "0")}</span>
         <div>
           <h1 className="text-[clamp(3rem,7vw,6rem)]">{m.t}</h1>
-          <p className="mt-4 text-2xl font-extrabold text-mint">{m.sub}</p>
+          <p className="mt-4 text-2xl font-extrabold text-mint">{copy?.short ?? m.sub}</p>
         </div>
       </div>
+      {copy && (
+        <div className="mt-16 max-w-3xl border-l-4 border-mint bg-navy/50 p-8">
+          <p className="font-semibold uppercase tracking-widest text-mint">Co to znamená · {label}</p>
+          <p className="mt-3 text-2xl font-bold leading-snug">{copy.you}</p>
+        </div>
+      )}
       <div className="mt-16 max-w-3xl space-y-6 text-xl leading-relaxed">
         {m.body.map((p, k) => <p key={k} className={k === 0 ? "font-semibold" : "text-muted-foreground"}>{p}</p>)}
       </div>
