@@ -97,9 +97,9 @@ function Index() {
         <p className="mb-12 max-w-3xl text-xl text-muted-foreground">
           Články, tiskové zprávy a videa přidáváme průběžně podle aktuálního politického dění. Zatím zde žádné nejsou.
         </p>
-        <div className="grid gap-px bg-foreground/15 sm:grid-cols-2 lg:grid-cols-4">
-          {ministers.map((m, i) => (
-            <div key={m.n} className={`bg-navy/50 p-8${i === ministers.length - 1 ? " lg:col-span-2" : ""}`}>
+        <div className="flex flex-wrap gap-px bg-foreground/15">
+          {ministers.map((m) => (
+            <div key={m.n} className="min-w-[240px] flex-1 bg-navy/50 p-8">
               <p className="text-xl font-extrabold">{m.n}</p>
               <p className="mt-2 text-muted-foreground">{m.a}</p>
             </div>
