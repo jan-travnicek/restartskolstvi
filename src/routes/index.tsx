@@ -84,11 +84,7 @@ function Index() {
           alt="Schéma Reformy 8PLUS2: modulární architektura regionálního vzdělávání od 3 do 18 let"
           className="mt-16"
         />
-        <AnimatedSchema
-          src={schema.url}
-          alt="Schéma Reformy 8PLUS2: modulární architektura regionálního vzdělávání od 3 do 18 let"
-          className="mt-8"
-        />
+        <div className="mt-12"><NextLink to="/opatreni">Všech 10 opatření podrobně</NextLink></div>
         <div className="mt-12"><NextLink to="/opatreni">Všech 10 opatření podrobně</NextLink></div>
       </Section>
 
