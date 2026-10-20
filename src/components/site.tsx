@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, type LinkProps } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 const logo = { url: "/media/ods-logo.png" };
 const logo8plus2 = { url: "/media/8plus2-logo.svg" };
@@ -95,7 +95,7 @@ export function PageHero({ kicker, title, lead }: { kicker: string; title: React
   );
 }
 
-export function NextLink({ to, children }: { to: (typeof nav)[number]["to"] | "/pro-koho"; children: ReactNode }) {
+export function NextLink({ to, children }: { to: LinkProps["to"]; children: ReactNode }) {
   return (
     <Link to={to} className="inline-block text-2xl font-extrabold hover:text-mint">
       <span className="text-mint">→</span> {children}
