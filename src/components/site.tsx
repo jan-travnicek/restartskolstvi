@@ -54,11 +54,21 @@ export function SiteHeader() {
 
 export function SiteFooter() {
   return (
-    <footer className="mx-auto max-w-7xl px-6 py-16 md:px-16">
-      <p className="text-2xl font-extrabold">
-        <span className="text-mint">→</span> restart<span className="font-accent font-normal italic">skolstvi</span>.cz
-      </p>
-      <p className="mt-3 text-sm text-muted-foreground">Reforma 8PLUS2 · Vize ODS pro vzdělávání</p>
+    <footer className="mx-auto max-w-7xl px-6 pb-16 md:px-16">
+      <div className="bg-mint px-8 py-12 text-navy md:px-12">
+        <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="text-3xl font-extrabold md:text-4xl">
+              <span className="text-navy/50">→</span> restart<span className="font-accent font-normal italic">skolstvi</span>.cz
+            </p>
+            <p className="mt-3 text-sm font-semibold text-navy/70">Reforma 8PLUS2 · Vize občanských demokratů pro vzdělané Česko 2030+</p>
+          </div>
+          <nav aria-label="Odkazy v patičce" className="flex flex-wrap gap-x-8 gap-y-3 text-sm font-extrabold uppercase tracking-wider">
+            <a className="underline-offset-4 hover:underline" href="https://www.ods.cz/osobni-udaje" target="_blank" rel="noopener noreferrer">Ochrana osobních údajů</a>
+            <a className="underline-offset-4 hover:underline" href="https://www.ods.cz/cookies" target="_blank" rel="noopener noreferrer">Cookies</a>
+          </nav>
+        </div>
+      </div>
     </footer>
   );
 }
