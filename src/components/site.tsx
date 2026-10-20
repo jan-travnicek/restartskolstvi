@@ -22,7 +22,7 @@ export function SiteHeader() {
       <Link to="/" className="shrink-0 text-lg font-bold leading-tight">
         Reforma<br />školství
       </Link>
-      <nav aria-label="Hlavní navigace" className="flex min-w-0 flex-1 items-center gap-x-5 overflow-x-auto whitespace-nowrap text-sm font-semibold [scrollbar-width:none] lg:justify-center [&::-webkit-scrollbar]:hidden">
+      <nav aria-label="Hlavní navigace" className="flex min-w-0 flex-1 items-center gap-x-5 overflow-x-auto whitespace-nowrap text-sm font-semibold [scrollbar-width:none] max-lg:[mask-image:linear-gradient(to_right,black_86%,transparent)] lg:justify-center [&::-webkit-scrollbar]:hidden">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button aria-label={`Pohled na reformu: ${selected?.label}`} className="h-12 shrink-0 justify-between gap-3 bg-mint px-4 font-extrabold text-navy shadow-none hover:bg-mint/90">
