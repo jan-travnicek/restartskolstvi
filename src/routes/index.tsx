@@ -11,13 +11,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const stats = [
-  { v: "+9,3 až 16,2 mld. Kč", l: "ročně – okamžitý přínos pro veřejné rozpočty" },
-  { v: "60–80 tisíc", l: "mladých lidí vstoupí každý rok o rok dříve na trh práce s reálnou kvalifikací" },
-  { v: "9 500 učitelů", l: "uvolníme z neefektivních 9. tříd tam, kde v systému kriticky chybějí" },
-  { v: "+2,3 až 2,8 mil. Kč", l: "odvede státu za život každý nový absolvent SŠ oproti člověku se základním vzděláním" },
-];
-
 const ministers = [
   { n: "Jan Lipavský", a: "Národní bezpečnost a odolnost vůči dezinformacím" },
   { n: "Radim Ivan", a: "Rozvoj regionů a svazkové školy" },
@@ -36,10 +29,10 @@ function Index() {
 
       <section className="mx-auto max-w-7xl px-6 pb-20 md:px-16">
         <div className="grid gap-px bg-foreground/15 sm:grid-cols-2 lg:grid-cols-4">
-          {stats.map((s, i) => (
+          {copy.stats.map((s) => (
             <div key={s.v} className="bg-navy/60 p-8">
               <p className="display text-4xl text-mint md:text-5xl">{s.v}</p>
-              <p className="mt-4 text-muted-foreground">{copy.stats[i]}</p>
+              <p className="mt-4 text-muted-foreground">{s.l}</p>
             </div>
           ))}
         </div>
