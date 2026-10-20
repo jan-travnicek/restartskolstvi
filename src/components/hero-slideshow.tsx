@@ -50,7 +50,7 @@ export function HeroSlideshow() {
       ))}
 
       {/* Překryv pro čitelnost v souladu s identitou webu */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-navy/30" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-navy via-navy/75 to-transparent" />
 
       <div className="relative mx-auto flex w-full max-w-7xl flex-col justify-between gap-10 px-6 pb-14 pt-24 md:flex-row md:items-end md:gap-12 md:px-16 md:pb-16 md:pt-10">
         <div>
