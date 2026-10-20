@@ -20,7 +20,7 @@ jobs:
         run: bun install
 
       - name: Sestaveni projektu (Build)
-        run: NITRO_PRESET=static bun run build
+        run: bun run build
 
       - name: Nahrani na Webglobe pres FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -28,5 +28,5 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./.output/public/
-          server-dir: public_html/
+          local-dir: ./dist/
+            server-dir: public_html/
