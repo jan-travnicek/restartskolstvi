@@ -11,3 +11,7 @@
 # Animated infographic
 - [x] Turn only the second homepage schema into an animated, clickable image while preserving its layout.
 - [x] Verify explanations, animation controls, zoom and narrow-screen display.
+
+# Rebuilt infographic
+- [ ] Rebuild the first diagram with explorable education paths, cycles, ages and milestones.
+- [ ] Verify path filters, details, original-image zoom and narrow-screen display.
