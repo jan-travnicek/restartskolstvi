@@ -18,14 +18,14 @@ export function SiteHeader() {
   const { audience, setAudience } = useAudience();
   const selected = audienceOptions.find((option) => option.id === audience);
   return (
-    <header className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6 px-6 py-8 md:px-16">
+    <header className="mx-auto flex max-w-7xl items-center gap-4 px-6 py-6 md:gap-6 md:px-16 md:py-8">
       <Link to="/" className="shrink-0 text-lg font-bold leading-tight">
         Reforma<br />školství
       </Link>
-      <nav aria-label="Hlavní navigace" className="order-3 flex w-full flex-wrap items-center gap-x-6 gap-y-4 text-sm font-semibold">
+      <nav aria-label="Hlavní navigace" className="flex min-w-0 flex-1 items-center gap-x-5 overflow-x-auto whitespace-nowrap text-sm font-semibold [scrollbar-width:none] lg:justify-center [&::-webkit-scrollbar]:hidden">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button aria-label={`Pohled na reformu: ${selected?.label}`} className="h-12 w-full justify-between gap-3 bg-mint px-4 font-extrabold text-navy shadow-none hover:bg-mint/90 sm:w-64">
+            <Button aria-label={`Pohled na reformu: ${selected?.label}`} className="h-12 shrink-0 justify-between gap-3 bg-mint px-4 font-extrabold text-navy shadow-none hover:bg-mint/90">
               <UsersRound aria-hidden="true" />
               <span className="flex-1 text-left">{selected?.label}</span>
               <ChevronDown aria-hidden="true" />
@@ -42,12 +42,12 @@ export function SiteHeader() {
           </DropdownMenuContent>
         </DropdownMenu>
         {nav.map((n) => (
-          <Link key={n.to} to={n.to} className="opacity-80 hover:opacity-100" activeProps={{ className: "text-mint opacity-100" }}>
+          <Link key={n.to} to={n.to} className="shrink-0 opacity-80 hover:opacity-100" activeProps={{ className: "text-mint opacity-100" }}>
             {n.label}
           </Link>
         ))}
       </nav>
-      <img src={logo.url} alt="ODS" className="h-14 w-auto" />
+      <img src={logo.url} alt="ODS" className="h-10 w-auto shrink-0 md:h-14" />
     </header>
   );
 }
