@@ -168,10 +168,10 @@ export const economics = [
 ];
 
 export const history = [
-  { y: "2022", d: "První odborné konzultace a představení základního záměru reformy." },
+  { y: "2022", d: "První odborné konzultace a představení základního záměru reformy. " },
   { y: "2023", d: "Veřejné konzultace v desítkách škol po celé ČR a odborné kulaté stoly v Poslanecké sněmovně i na univerzitách." },
-  { y: "2024", d: "Zformování expertní pracovní skupiny a oficiální představení reformy na Pedagogické fakultě UK." },
-  { y: "2025", d: "Série kulatých stolů pro finální veřejnou konzultaci a ekonomická analýza dopadů od CETA." },
+  { y: "2024", d: "Finalizace konceptu a jednotlivých opatření s expertní pracovní skupinou. Oficiální představení reformy na Pedagogické fakultě UK." },
+  { y: "2025", d: "Série kulatých stolů pro odbornou veřejnou konzultaci a ekonomická analýza dopadů od CETA." },
 ];
 
 export const nextSteps = [
