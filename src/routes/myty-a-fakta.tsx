@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section, meta } from "@/components/site";
+import { useAudience } from "@/components/audience-provider";
 
 export const Route = createFileRoute("/myty-a-fakta")({
   head: () => meta("Mýty vs. fakta o Reformě 8PLUS2", "Odpovědi na nejčastější mýty o reformě školství: délka vzdělávání, inkluze a vesnické školy."),
@@ -13,12 +14,13 @@ const items = [
 ];
 
 function Page() {
+  const { copy } = useAudience();
   return (
     <>
       <PageHero kicker="Bez strašení" title={<>Mýty <span className="text-mint">vs.</span> fakta</>} />
       <Section>
         <div className="space-y-4">
-          {items.map((i) => (
+          {items.map((i, index) => (
             <div key={i.m} className="grid gap-px bg-foreground/15 md:grid-cols-2">
               <div className="bg-navy/70 p-8">
                 <p className="font-semibold uppercase tracking-widest text-muted-foreground">Mýtus</p>
@@ -26,7 +28,7 @@ function Page() {
               </div>
               <div className="bg-navy/40 p-8">
                 <p className="font-semibold uppercase tracking-widest text-mint">Fakt</p>
-                <p className="mt-3 text-2xl font-extrabold">{i.f}</p>
+                <p className="mt-3 text-2xl font-extrabold">{copy.myths[index]}</p>
               </div>
             </div>
           ))}

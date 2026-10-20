@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section, meta } from "@/components/site";
 import { economics } from "@/lib/content";
+import { useAudience } from "@/components/audience-provider";
 
 export const Route = createFileRoute("/data")({
   head: () => meta("Data místo dojmů – Reforma 8PLUS2", "Studie CETA a výstupy PAQ Research ke stažení. Srovnání vize ODS a přístupu ANO."),
@@ -20,11 +21,12 @@ const compare = [
 ];
 
 function Page() {
+  const { copy } = useAudience();
   return (
     <>
       <PageHero kicker="Pro média a odborníky" title={<>Data místo<br /><span className="text-mint">dojmů</span></>} />
       <Section kicker="Ekonomické dopady" title={<>Reforma 8+2 <span className="text-mint">se vyplatí</span></>}>
-        <p className="-mt-6 mb-12 max-w-3xl text-xl">Reforma 8+2 není výdajem, ale strukturální investicí s mimořádně rychlou a prokazatelnou návratností. Data CETA a PAQ Research ukazují, že udržování současného stavu je fiskálně neudržitelné.</p>
+        <p className="-mt-6 mb-12 max-w-3xl text-xl">{copy.dataLead}</p>
         <div className="grid gap-px bg-foreground/15 sm:grid-cols-2 lg:grid-cols-4">
           {economics.map((e) => (
             <div key={e.t} className="bg-navy/60 p-8">
