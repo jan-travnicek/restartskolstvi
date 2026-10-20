@@ -45,7 +45,7 @@ export function HeroSlideshow() {
           alt={i === index ? s.alt : ""}
           aria-hidden={i !== index}
           loading={i === 0 ? "eager" : "lazy"}
-          className={`absolute inset-0 h-full w-full object-cover object-[center_25%] transition-opacity duration-1000 ${
+          className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-1000 ${
             i === index ? "opacity-100" : "opacity-0"
           }`}
         />
