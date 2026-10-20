@@ -25,6 +25,9 @@
   --color-navy: var(--navy);
   --color-sky: var(--sky);
   --color-mint: var(--mint);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-royal: var(--royal);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -73,6 +76,8 @@
   --navy: oklch(0.28 0.12 270);
   --sky: oklch(0.64 0.13 250);
   --mint: oklch(0.84 0.15 175);
+  --paper: oklch(0.985 0.006 250);
+  --ink: oklch(0.24 0.09 268);
   --background: var(--royal);
   --foreground: oklch(1 0 0);
   --gradient-poster: linear-gradient(180deg, var(--royal) 0%, oklch(0.52 0.18 262) 35%, var(--sky) 60%, var(--navy) 100%);
@@ -304,3 +309,18 @@
 .education-detail { animation: education-enter 300ms ease-out; }
 @keyframes education-enter { from { opacity: 0; } to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .education-node { transition: none; } .education-detail { animation: none; } }
+
+@keyframes v2-rise { from { opacity: 0; transform: translateY(2.5rem); } to { opacity: 1; transform: none; } }
+@keyframes v2-marquee { to { transform: translateX(-50%); } }
+@keyframes v2-float { 50% { transform: translateY(-14px) rotate(3deg); } }
+@utility v2-reveal {
+  opacity: 0; transform: translateY(2.5rem); transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1);
+  &[data-shown="true"] { opacity: 1; transform: none; }
+}
+@utility v2-rise { animation: v2-rise 1s cubic-bezier(.2,.7,.2,1) both; }
+@utility v2-marquee { animation: v2-marquee 32s linear infinite; }
+@utility v2-float { animation: v2-float 7s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .v2-reveal { opacity: 1; transform: none; transition: none; }
+  .v2-rise, .v2-marquee, .v2-float { animation: none; }
+}
