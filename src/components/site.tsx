@@ -61,7 +61,7 @@ export function SiteFooter() {
             <p className="text-3xl font-extrabold md:text-4xl">
               <span className="text-navy/50">→</span> restart<span className="font-accent font-normal italic">skolstvi</span>.cz
             </p>
-            <p className="mt-3 text-sm font-semibold text-navy/70">Reforma 8PLUS2 · Vize občanských demokratů pro vzdělané Česko 2030+</p>
+            <p className="mt-3 text-sm font-semibold text-navy">Reforma 8PLUS2 · Vize občanských demokratů pro vzdělané Česko 2030+</p>
           </div>
           <nav aria-label="Odkazy v patičce" className="flex flex-wrap gap-x-8 gap-y-3 text-sm font-extrabold uppercase tracking-wider">
             <a className="underline-offset-4 hover:underline" href="https://www.ods.cz/osobni-udaje" target="_blank" rel="noopener noreferrer">Ochrana osobních údajů</a>
