@@ -9,7 +9,7 @@ import { audienceOptions, isAudience } from "@/lib/content";
 
 const nav = [
   { to: "/opatreni", label: "10 opatření" },
-  { to: "/data", label: "Data místo dojmů" },
+  { to: "/data", label: "Data" },
   { to: "/odborna-opora", label: "Odborná opora" },
   { to: "/myty-a-fakta", label: "Mýty vs. fakta" },
 ] as const;
