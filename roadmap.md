@@ -4,5 +4,6 @@
 - [x] Test selection, navigation, measure coverage and unchanged news; verify desktop/mobile display.
 
 # FTP deployment
-- [ ] Enable static HTML generation for the homepage and every content page.
-- [ ] Check the HTML output before FTP upload and test deployment coverage.
+- [x] Enable static HTML generation for the homepage and every content page.
+- [x] Check the HTML output before FTP upload and test deployment coverage.
+- [ ] Confirm the next GitHub Actions run generates and uploads all 16 HTML pages (blocked: no access to the repository's Actions run or FTP server).
