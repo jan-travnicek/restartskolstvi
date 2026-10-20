@@ -1,13 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import hero1 from "@/assets/rz-hero-1.jpg.asset.json";
 import hero2 from "@/assets/rz-hero-2.jpg.asset.json";
 import hero3 from "@/assets/rz-hero-3.jpg.asset.json";
 
 const SLIDES = [
-  { src: hero1.url, alt: "Renáta Zajíčková, stínová ministryně školství za ODS" },
-  { src: hero2.url, alt: "Renáta Zajíčková v parku s tabletem" },
   { src: hero3.url, alt: "Renáta Zajíčková se žáky ve školní třídě" },
+  { src: hero2.url, alt: "Renáta Zajíčková v parku s tabletem" },
 ];
 
 const INTERVAL = 6000;
