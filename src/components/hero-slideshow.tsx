@@ -52,33 +52,35 @@ export function HeroSlideshow() {
       {/* Překryv pro čitelnost v souladu s identitou webu */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-navy/30" />
 
-      <div className="relative mx-auto w-full max-w-7xl px-6 pb-20 pt-40 md:px-16 md:pb-24">
-        <h1 className="text-[clamp(4rem,11vw,10rem)] text-mint">
-          Reforma
-          <br />
-          8PLUS2
-        </h1>
-        <p className="mt-6 max-w-2xl text-2xl font-extrabold leading-tight md:text-4xl">
+      <div className="relative mx-auto flex w-full max-w-7xl flex-col justify-between gap-10 px-6 pb-16 pt-28 md:flex-row md:items-end md:gap-12 md:px-16 md:pb-16">
+        <div>
+          <h1 className="text-[clamp(3rem,9vw,8rem)] leading-[0.92] text-mint">
+            Reforma
+            <br />
+            8PLUS2
+          </h1>
+          <div className="mt-8 flex flex-wrap items-center gap-6">
+            <Link
+              to="/opatreni"
+              className="inline-flex items-center gap-3 rounded bg-mint px-8 py-4 text-lg font-extrabold text-navy transition-transform hover:-translate-y-0.5"
+            >
+              Všech 10 opatření
+              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </Link>
+            <Link to="/data" className="text-lg font-bold text-mint underline-offset-4 hover:underline">
+              Data místo dojmů
+            </Link>
+          </div>
+        </div>
+        <p className="text-2xl font-extrabold leading-tight md:max-w-md md:text-right md:text-4xl">
           Místo devítky{"\u00a0"}
           <br />
           dva roky na střední{"\u00a0"}
           <br />
           <span className="text-mint">pro všechny děti</span>
         </p>
-        <div className="mt-8 flex flex-wrap items-center gap-6">
-          <Link
-            to="/opatreni"
-            className="inline-flex items-center gap-3 rounded bg-mint px-8 py-4 text-lg font-extrabold text-navy transition-transform hover:-translate-y-0.5"
-          >
-            Všech 10 opatření
-            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M5 12h14M13 6l6 6-6 6" />
-            </svg>
-          </Link>
-          <Link to="/data" className="text-lg font-bold text-mint underline-offset-4 hover:underline">
-            Data místo dojmů
-          </Link>
-        </div>
       </div>
 
       {/* Ovládání slideshow */}
