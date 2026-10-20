@@ -22,11 +22,15 @@ jobs:
       - name: Sestaveni projektu (Build)
         run: bun run build
 
+      - name: Overeni HTML pro FTP
+        id: static-output
+        run: bun scripts/check-static-output.ts >> "$GITHUB_OUTPUT"
+
       - name: Nahrani na Webglobe pres FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./.output/public/
+          local-dir: ${{ steps.static-output.outputs.directory }}
           server-dir: public_html/
