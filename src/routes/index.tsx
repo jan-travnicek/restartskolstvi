@@ -18,6 +18,16 @@ const stats = [
   { v: "+2,3 až 2,8 mil. Kč", l: "odvede státu za život každý nový absolvent SŠ oproti člověku se základním vzděláním" },
 ];
 
+const ministers = [
+  { n: "Jan Lipavský", a: "Národní bezpečnost a odolnost vůči dezinformacím" },
+  { n: "Radim Ivan", a: "Rozvoj regionů a svazkové školy" },
+  { n: "Jiří Havránek", a: "Trh práce a důchodový systém" },
+  { n: "Pavel Drobil", a: "Průmysl a propojení s praxí" },
+  { n: "Štěpán Slovák", a: "Duševní zdraví a revize inkluze" },
+  { n: "Jan Skopeček", a: "Veřejné finance a konec PHmax" },
+  { n: "Martin Kupka", a: "Moderní stát a vzdělávací účty" },
+];
+
 function Index() {
   const { copy, pillars } = useAudience();
   return (
@@ -81,6 +91,20 @@ function Index() {
           className="mt-16"
         />
         <div className="mt-12"><NextLink to="/opatreni">Všech 10 opatření podrobně</NextLink></div>
+      </Section>
+
+      <Section kicker="Aktuality" title={<>Pohled <span className="text-mint">stínové vlády</span></>}>
+        <p className="mb-12 max-w-3xl text-xl text-muted-foreground">
+          Články, tiskové zprávy a videa přidáváme průběžně podle aktuálního politického dění. Zatím zde žádné nejsou.
+        </p>
+        <div className="flex flex-wrap gap-px bg-foreground/15">
+          {ministers.map((m) => (
+            <div key={m.n} className="min-w-[240px] flex-1 bg-navy/50 p-8">
+              <p className="text-xl font-extrabold">{m.n}</p>
+              <p className="mt-2 text-muted-foreground">{m.a}</p>
+            </div>
+          ))}
+        </div>
       </Section>
 
       <Section kicker="Co můžete udělat vy?">

@@ -10,7 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as AktualityRouteImport } from './routes/aktuality'
 import { Route as DataRouteImport } from './routes/data'
 import { Route as MytyAFaktaRouteImport } from './routes/myty-a-fakta'
 import { Route as OdbornaOporaRouteImport } from './routes/odborna-opora'
@@ -21,11 +20,6 @@ import { Route as OpatreniSlugRouteImport } from './routes/opatreni.$slug'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AktualityRoute = AktualityRouteImport.update({
-  id: '/aktuality',
-  path: '/aktuality',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DataRoute = DataRouteImport.update({
@@ -61,7 +55,6 @@ const OpatreniSlugRoute = OpatreniSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/aktuality': typeof AktualityRoute
   '/data': typeof DataRoute
   '/myty-a-fakta': typeof MytyAFaktaRoute
   '/odborna-opora': typeof OdbornaOporaRoute
@@ -71,7 +64,6 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/aktuality': typeof AktualityRoute
   '/data': typeof DataRoute
   '/myty-a-fakta': typeof MytyAFaktaRoute
   '/odborna-opora': typeof OdbornaOporaRoute
@@ -82,7 +74,6 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/aktuality': typeof AktualityRoute
   '/data': typeof DataRoute
   '/myty-a-fakta': typeof MytyAFaktaRoute
   '/odborna-opora': typeof OdbornaOporaRoute
@@ -94,7 +85,6 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/aktuality'
     | '/data'
     | '/myty-a-fakta'
     | '/odborna-opora'
@@ -104,7 +94,6 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/aktuality'
     | '/data'
     | '/myty-a-fakta'
     | '/odborna-opora'
@@ -114,7 +103,6 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
-    | '/aktuality'
     | '/data'
     | '/myty-a-fakta'
     | '/odborna-opora'
@@ -125,7 +113,6 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AktualityRoute: typeof AktualityRoute
   DataRoute: typeof DataRoute
   MytyAFaktaRoute: typeof MytyAFaktaRoute
   OdbornaOporaRoute: typeof OdbornaOporaRoute
@@ -141,13 +128,6 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/aktuality': {
-      id: '/aktuality'
-      path: '/aktuality'
-      fullPath: '/aktuality'
-      preLoaderRoute: typeof AktualityRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/data': {
@@ -197,7 +177,6 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AktualityRoute: AktualityRoute,
   DataRoute: DataRoute,
   MytyAFaktaRoute: MytyAFaktaRoute,
   OdbornaOporaRoute: OdbornaOporaRoute,
