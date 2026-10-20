@@ -46,11 +46,12 @@ export function EducationInfographic({ src, alt, className = "" }: { src: string
             {educationMilestones.map((item) => <Button variant="ghost" key={item.age} className={`education-landmark education-age-${item.age}`} aria-label={`${item.label}, ${item.age} let`} title={item.detail} onClick={() => setSelected(item.stage)}><Check /><span>{item.age} let<br /><strong>{item.label}</strong></span></Button>)}
           </div>
           <div className="education-grid">
-            {educationStages.map((item) => <Button key={item.id} variant="ghost" className={`education-node education-node-${item.id} education-tone-${item.kind}`} data-selected={stage.id === item.id} data-dimmed={!isOnEducationPath(item, path)} aria-pressed={stage.id === item.id} aria-label={`${item.title} ${item.short}, ${item.start} až ${item.end} let`} aria-controls={detailId} onClick={() => setSelected(item.id)}>
+            {educationStages.map((item) => <Button key={item.id} variant="ghost" className={`education-node education-node-${item.id} education-tone-${item.kind}`} data-selected={stage.id === item.id} data-dimmed={!isOnEducationPath(item, path)} aria-pressed={stage.id === item.id} aria-label={`${item.title} ${item.short}, ${item.start} až ${item.end} let`} aria-controls={detailId} onClick={() => { setSelected(item.id); if (!isOnEducationPath(item, path)) setPath("all"); }}>
               <span className="education-node-age">{item.start}<ArrowRight />{item.end} let</span>
               <span className="education-node-name">{item.title}</span>
               <span className="education-node-duration">{item.short}</span>
               <span className="education-node-qualification">{item.qualification}</span>
+              <span className="education-node-outcome">{item.outcome}</span>
             </Button>)}
             <div className="education-foundation"><span>Společný základ 14–16 let</span><ArrowRight /></div>
             <div className="education-next"><GraduationCap /><span>Terciární<br />vzdělávání</span><ArrowRight /><BriefcaseBusiness /><span>Další profesní<br />vzdělávání</span><ArrowRight /></div>

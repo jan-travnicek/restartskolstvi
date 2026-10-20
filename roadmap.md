@@ -13,5 +13,5 @@
 - [x] Verify explanations, animation controls, zoom and narrow-screen display.
 
 # Rebuilt infographic
-- [ ] Rebuild the first diagram with explorable education paths, cycles, ages and milestones.
-- [ ] Verify path filters, details, original-image zoom and narrow-screen display.
+- [x] Rebuild the first diagram with explorable education paths, cycles, ages and milestones.
+- [x] Verify path filters, details, original-image zoom and narrow-screen display.
