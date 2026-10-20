@@ -4,7 +4,6 @@ import { useAudience } from "@/components/audience-provider";
 import schema from "@/assets/schema-8plus2.jpg.asset.json";
 import signature from "@/assets/podpis-rz.png.asset.json";
 import { EducationInfographic } from "@/components/education-infographic";
-import { AnimatedSchema } from "@/components/animated-schema";
 import { HeroSlideshow } from "@/components/hero-slideshow";
 
 export const Route = createFileRoute("/")({
