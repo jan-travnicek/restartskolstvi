@@ -13,7 +13,7 @@ function clampScale(s: number) {
   return Math.min(MAX_SCALE, Math.max(MIN_SCALE, s));
 }
 
-export function SchemaViewer({ src, alt, className = "" }: { src: string; alt: string; className?: string }) {
+export function SchemaViewer({ src, alt, className = "", trigger }: { src: string; alt: string; className?: string; trigger?: React.ReactNode }) {
   const [open, setOpen] = useState(false);
   const [view, setView] = useState<View>(RESET);
   const [dragging, setDragging] = useState(false);
@@ -110,12 +110,13 @@ export function SchemaViewer({ src, alt, className = "" }: { src: string; alt: s
         type="button"
         onClick={() => setOpen(true)}
         aria-label="Otevřít schéma reformy v pop-okně se zvětšením"
-        className={`group relative block w-full cursor-zoom-in overflow-hidden rounded bg-foreground ${className}`}
+        title={trigger ? "Zvětšit schéma" : undefined}
+        className={`group relative cursor-zoom-in overflow-hidden rounded ${trigger ? "inline-flex items-center justify-center" : "block w-full bg-foreground"} ${className}`}
       >
-        <img src={src} alt={alt} className="h-auto w-full" loading="lazy" />
-        <span className="pointer-events-none absolute bottom-4 right-4 inline-flex items-center gap-2 rounded bg-navy/85 px-4 py-2 text-sm font-bold text-mint opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
+        {trigger ?? <img src={src} alt={alt} className="h-auto w-full" loading="lazy" />}
+        {!trigger && <span className="pointer-events-none absolute bottom-4 right-4 inline-flex items-center gap-2 rounded bg-navy/85 px-4 py-2 text-sm font-bold text-mint opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
           <PlusIcon /> Zvětšit
-        </span>
+        </span>}
       </button>
 
       {open && (
