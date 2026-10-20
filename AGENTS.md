@@ -18,3 +18,4 @@
 - `AudienceProvider` wraps the shared site at the root and holds in-memory selection across client navigation; no page reload or browser storage is needed for this presentation preference.
 - Aktuality is a standalone block on the homepage (`src/routes/index.tsx`), not a nav item or its own route, so news lives where readers first land.
 - Static FTP deployment enumerates concrete pages from canonical measures in `scripts/static-pages.ts`; the workflow validates every generated HTML page and chooses the static output directory before uploading, so a successful assets-only build cannot replace the site.
+- Images the site displays live in `public/media/` and are referenced as `/media/...`, because the FTP-hosted static site cannot reach Lovable's asset CDN.

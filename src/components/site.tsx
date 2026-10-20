@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
-import logo from "@/assets/ods-logo.png.asset.json";
-import logo8plus2 from "@/assets/8plus2-logo.svg.asset.json";
+const logo = { url: "/media/ods-logo.png" };
+const logo8plus2 = { url: "/media/8plus2-logo.svg" };
 import { ChevronDown, UsersRound } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuRadioGroup, DropdownMenuRadioItem } from "@/components/ui/dropdown-menu";

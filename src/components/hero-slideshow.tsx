@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import hero2 from "@/assets/rz-hero-2.jpg.asset.json";
-import hero3 from "@/assets/rz-hero-3.jpg.asset.json";
+const hero2 = { url: "/media/rz-hero-2.jpg" };
+const hero3 = { url: "/media/rz-hero-3.jpg" };
 import { useAudience } from "@/components/audience-provider";
 
 const SLIDES = [
