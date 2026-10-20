@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import logo from "@/assets/ods-logo.png.asset.json";
+import logo8plus2 from "@/assets/8plus2-logo.svg.asset.json";
 import { ChevronDown, UsersRound } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuRadioGroup, DropdownMenuRadioItem } from "@/components/ui/dropdown-menu";
@@ -19,8 +20,9 @@ export function SiteHeader() {
   const selected = audienceOptions.find((option) => option.id === audience);
   return (
     <header className="mx-auto flex max-w-7xl items-center gap-4 px-6 py-6 md:gap-6 md:px-16 md:py-8">
-      <Link to="/" className="shrink-0 text-lg font-bold leading-tight">
-        Reforma<br />školství
+      <Link to="/" className="flex shrink-0 items-center gap-3 md:gap-4">
+        <img src={logo8plus2.url} alt="8PLUS2" className="h-7 w-auto md:h-9" />
+        <span className="text-sm font-bold leading-tight md:text-base">Reforma<br />školství</span>
       </Link>
       <nav aria-label="Hlavní navigace" className="flex min-w-0 flex-1 items-center gap-x-5 overflow-x-auto whitespace-nowrap text-sm font-semibold [scrollbar-width:none] lg:justify-center [&::-webkit-scrollbar]:hidden">
         <DropdownMenu>
