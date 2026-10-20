@@ -12,7 +12,6 @@ const nav = [
   { to: "/data", label: "Data místo dojmů" },
   { to: "/odborna-opora", label: "Odborná opora" },
   { to: "/myty-a-fakta", label: "Mýty vs. fakta" },
-  { to: "/aktuality", label: "Aktuality" },
 ] as const;
 
 export function SiteHeader() {
