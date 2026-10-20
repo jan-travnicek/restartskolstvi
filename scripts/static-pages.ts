@@ -1,7 +1,7 @@
 import { allMeasures } from "../src/lib/content";
 
 // Concrete URLs are required: a parameterized route is not a static page.
-export const staticPagePaths = [
+const basePaths = [
   "/",
   "/opatreni",
   "/data",
@@ -10,6 +10,8 @@ export const staticPagePaths = [
   "/pro-koho",
   ...allMeasures.map((measure) => `/opatreni/${measure.slug}`),
 ];
+
+export const staticPagePaths = [...basePaths, ...basePaths.map((path) => (path === "/" ? "/verze-2" : `/verze-2${path}`))];
 
 export const staticPrerenderOptions = {
   pages: staticPagePaths.map((path) => ({ path })),

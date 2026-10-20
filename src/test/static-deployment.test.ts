@@ -10,13 +10,15 @@ describe("FTP HTML export", () => {
     expect(staticPrerenderOptions.prerender.enabled).toBe(true);
     expect(staticPagePaths).toContain("/");
     expect(staticPagePaths.filter((path) => path.startsWith("/opatreni/"))).toHaveLength(10);
-    expect(new Set(staticPagePaths).size).toBe(16);
+    expect(staticPagePaths.filter((path) => path.startsWith("/verze-2/opatreni/"))).toHaveLength(10);
+    expect(staticPagePaths).toContain("/verze-2");
+    expect(new Set(staticPagePaths).size).toBe(32);
   });
 
   it("rejects missing index.html and accepts a complete static site", () => {
     const directory = mkdtempSync(join(tmpdir(), "reform-static-"));
     try {
-      expect(checkStaticOutput(directory)).toHaveLength(16);
+      expect(checkStaticOutput(directory)).toHaveLength(32);
       for (const path of staticPagePaths) {
         const folder = path === "/" ? directory : join(directory, path.slice(1));
         mkdirSync(folder, { recursive: true });
