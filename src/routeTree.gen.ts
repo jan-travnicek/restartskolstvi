@@ -16,6 +16,13 @@ import { Route as OdbornaOporaRouteImport } from './routes/odborna-opora'
 import { Route as ProKohoRouteImport } from './routes/pro-koho'
 import { Route as OpatreniIndexRouteImport } from './routes/opatreni.index'
 import { Route as OpatreniSlugRouteImport } from './routes/opatreni.$slug'
+import { Route as Verze2IndexRouteImport } from './routes/verze-2/index'
+import { Route as Verze2DataRouteImport } from './routes/verze-2/data'
+import { Route as Verze2MytyAFaktaRouteImport } from './routes/verze-2/myty-a-fakta'
+import { Route as Verze2OdbornaOporaRouteImport } from './routes/verze-2/odborna-opora'
+import { Route as Verze2ProKohoRouteImport } from './routes/verze-2/pro-koho'
+import { Route as Verze2OpatreniIndexRouteImport } from './routes/verze-2/opatreni.index'
+import { Route as Verze2OpatreniSlugRouteImport } from './routes/verze-2/opatreni.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -52,6 +59,41 @@ const OpatreniSlugRoute = OpatreniSlugRouteImport.update({
   path: '/opatreni/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const Verze2IndexRoute = Verze2IndexRouteImport.update({
+  id: '/verze-2/',
+  path: '/verze-2/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Verze2DataRoute = Verze2DataRouteImport.update({
+  id: '/verze-2/data',
+  path: '/verze-2/data',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Verze2MytyAFaktaRoute = Verze2MytyAFaktaRouteImport.update({
+  id: '/verze-2/myty-a-fakta',
+  path: '/verze-2/myty-a-fakta',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Verze2OdbornaOporaRoute = Verze2OdbornaOporaRouteImport.update({
+  id: '/verze-2/odborna-opora',
+  path: '/verze-2/odborna-opora',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Verze2ProKohoRoute = Verze2ProKohoRouteImport.update({
+  id: '/verze-2/pro-koho',
+  path: '/verze-2/pro-koho',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Verze2OpatreniIndexRoute = Verze2OpatreniIndexRouteImport.update({
+  id: '/verze-2/opatreni/',
+  path: '/verze-2/opatreni/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Verze2OpatreniSlugRoute = Verze2OpatreniSlugRouteImport.update({
+  id: '/verze-2/opatreni/$slug',
+  path: '/verze-2/opatreni/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -60,7 +102,14 @@ export interface FileRoutesByFullPath {
   '/odborna-opora': typeof OdbornaOporaRoute
   '/pro-koho': typeof ProKohoRoute
   '/opatreni/$slug': typeof OpatreniSlugRoute
+  '/verze-2/data': typeof Verze2DataRoute
+  '/verze-2/myty-a-fakta': typeof Verze2MytyAFaktaRoute
+  '/verze-2/odborna-opora': typeof Verze2OdbornaOporaRoute
+  '/verze-2/pro-koho': typeof Verze2ProKohoRoute
   '/opatreni/': typeof OpatreniIndexRoute
+  '/verze-2/': typeof Verze2IndexRoute
+  '/verze-2/opatreni/$slug': typeof Verze2OpatreniSlugRoute
+  '/verze-2/opatreni/': typeof Verze2OpatreniIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -69,7 +118,14 @@ export interface FileRoutesByTo {
   '/odborna-opora': typeof OdbornaOporaRoute
   '/pro-koho': typeof ProKohoRoute
   '/opatreni/$slug': typeof OpatreniSlugRoute
+  '/verze-2/data': typeof Verze2DataRoute
+  '/verze-2/myty-a-fakta': typeof Verze2MytyAFaktaRoute
+  '/verze-2/odborna-opora': typeof Verze2OdbornaOporaRoute
+  '/verze-2/pro-koho': typeof Verze2ProKohoRoute
   '/opatreni': typeof OpatreniIndexRoute
+  '/verze-2': typeof Verze2IndexRoute
+  '/verze-2/opatreni/$slug': typeof Verze2OpatreniSlugRoute
+  '/verze-2/opatreni': typeof Verze2OpatreniIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -79,7 +135,14 @@ export interface FileRoutesById {
   '/odborna-opora': typeof OdbornaOporaRoute
   '/pro-koho': typeof ProKohoRoute
   '/opatreni/$slug': typeof OpatreniSlugRoute
+  '/verze-2/data': typeof Verze2DataRoute
+  '/verze-2/myty-a-fakta': typeof Verze2MytyAFaktaRoute
+  '/verze-2/odborna-opora': typeof Verze2OdbornaOporaRoute
+  '/verze-2/pro-koho': typeof Verze2ProKohoRoute
   '/opatreni/': typeof OpatreniIndexRoute
+  '/verze-2/': typeof Verze2IndexRoute
+  '/verze-2/opatreni/$slug': typeof Verze2OpatreniSlugRoute
+  '/verze-2/opatreni/': typeof Verze2OpatreniIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -90,7 +153,14 @@ export interface FileRouteTypes {
     | '/odborna-opora'
     | '/pro-koho'
     | '/opatreni/$slug'
+    | '/verze-2/data'
+    | '/verze-2/myty-a-fakta'
+    | '/verze-2/odborna-opora'
+    | '/verze-2/pro-koho'
     | '/opatreni/'
+    | '/verze-2/'
+    | '/verze-2/opatreni/$slug'
+    | '/verze-2/opatreni/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -99,7 +169,14 @@ export interface FileRouteTypes {
     | '/odborna-opora'
     | '/pro-koho'
     | '/opatreni/$slug'
+    | '/verze-2/data'
+    | '/verze-2/myty-a-fakta'
+    | '/verze-2/odborna-opora'
+    | '/verze-2/pro-koho'
     | '/opatreni'
+    | '/verze-2'
+    | '/verze-2/opatreni/$slug'
+    | '/verze-2/opatreni'
   id:
     | '__root__'
     | '/'
@@ -108,7 +185,14 @@ export interface FileRouteTypes {
     | '/odborna-opora'
     | '/pro-koho'
     | '/opatreni/$slug'
+    | '/verze-2/data'
+    | '/verze-2/myty-a-fakta'
+    | '/verze-2/odborna-opora'
+    | '/verze-2/pro-koho'
     | '/opatreni/'
+    | '/verze-2/'
+    | '/verze-2/opatreni/$slug'
+    | '/verze-2/opatreni/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -118,7 +202,14 @@ export interface RootRouteChildren {
   OdbornaOporaRoute: typeof OdbornaOporaRoute
   ProKohoRoute: typeof ProKohoRoute
   OpatreniSlugRoute: typeof OpatreniSlugRoute
+  Verze2DataRoute: typeof Verze2DataRoute
+  Verze2MytyAFaktaRoute: typeof Verze2MytyAFaktaRoute
+  Verze2OdbornaOporaRoute: typeof Verze2OdbornaOporaRoute
+  Verze2ProKohoRoute: typeof Verze2ProKohoRoute
   OpatreniIndexRoute: typeof OpatreniIndexRoute
+  Verze2IndexRoute: typeof Verze2IndexRoute
+  Verze2OpatreniSlugRoute: typeof Verze2OpatreniSlugRoute
+  Verze2OpatreniIndexRoute: typeof Verze2OpatreniIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -172,6 +263,55 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OpatreniSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/verze-2/': {
+      id: '/verze-2/'
+      path: '/verze-2'
+      fullPath: '/verze-2/'
+      preLoaderRoute: typeof Verze2IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verze-2/data': {
+      id: '/verze-2/data'
+      path: '/verze-2/data'
+      fullPath: '/verze-2/data'
+      preLoaderRoute: typeof Verze2DataRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verze-2/myty-a-fakta': {
+      id: '/verze-2/myty-a-fakta'
+      path: '/verze-2/myty-a-fakta'
+      fullPath: '/verze-2/myty-a-fakta'
+      preLoaderRoute: typeof Verze2MytyAFaktaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verze-2/odborna-opora': {
+      id: '/verze-2/odborna-opora'
+      path: '/verze-2/odborna-opora'
+      fullPath: '/verze-2/odborna-opora'
+      preLoaderRoute: typeof Verze2OdbornaOporaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verze-2/pro-koho': {
+      id: '/verze-2/pro-koho'
+      path: '/verze-2/pro-koho'
+      fullPath: '/verze-2/pro-koho'
+      preLoaderRoute: typeof Verze2ProKohoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verze-2/opatreni/': {
+      id: '/verze-2/opatreni/'
+      path: '/verze-2/opatreni'
+      fullPath: '/verze-2/opatreni/'
+      preLoaderRoute: typeof Verze2OpatreniIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verze-2/opatreni/$slug': {
+      id: '/verze-2/opatreni/$slug'
+      path: '/verze-2/opatreni/$slug'
+      fullPath: '/verze-2/opatreni/$slug'
+      preLoaderRoute: typeof Verze2OpatreniSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -182,7 +322,14 @@ const rootRouteChildren: RootRouteChildren = {
   OdbornaOporaRoute: OdbornaOporaRoute,
   ProKohoRoute: ProKohoRoute,
   OpatreniSlugRoute: OpatreniSlugRoute,
+  Verze2DataRoute: Verze2DataRoute,
+  Verze2MytyAFaktaRoute: Verze2MytyAFaktaRoute,
+  Verze2OdbornaOporaRoute: Verze2OdbornaOporaRoute,
+  Verze2ProKohoRoute: Verze2ProKohoRoute,
   OpatreniIndexRoute: OpatreniIndexRoute,
+  Verze2IndexRoute: Verze2IndexRoute,
+  Verze2OpatreniSlugRoute: Verze2OpatreniSlugRoute,
+  Verze2OpatreniIndexRoute: Verze2OpatreniIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

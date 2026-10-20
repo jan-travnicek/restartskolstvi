@@ -13,7 +13,7 @@ export const Route = createFileRoute("/verze-2/opatreni/$slug")({
     if (!loaderData) return { meta: [{ title: "Opatření nenalezeno" }, { name: "robots", content: "noindex" }] };
     const m = allMeasures[loaderData.i];
     if (!m) return meta("Verze 2 · Opatření nenalezeno – Reforma 8PLUS2", "Požadované opatření nebylo nalezeno.");
-    return meta(`${m.n}. ${m.t} – Reforma 8PLUS2`, m.short);
+    return meta(`Verze 2 · ${m.n}. ${m.t} – Reforma 8PLUS2`, m.short);
   },
   component: Page,
 });
