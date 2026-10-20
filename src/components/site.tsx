@@ -84,7 +84,7 @@ export function SiteFooter() {
       <p className="text-2xl font-extrabold">
         <span className="text-mint">→</span> restart<span className="font-accent font-normal italic">skolstvi</span>.cz
       </p>
-      <p className="mt-3 text-sm text-muted-foreground">Reforma 8PLUS2 · Vize ODS pro vzdělávání</p>
+      <p className="mt-3 text-sm text-muted-foreground">Reforma 8PLUS2 · Vize občanských demokratů pro vzdělané Česko 2030+</p>
     </footer>
   );
 }
