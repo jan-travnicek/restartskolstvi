@@ -54,7 +54,7 @@ export function HeroSlideshow() {
 
       <div className="relative mx-auto flex w-full max-w-7xl flex-col justify-between gap-10 px-6 pb-14 pt-24 md:flex-row md:items-end md:gap-12 md:px-16 md:pb-16 md:pt-10">
         <div>
-          <h1 className="text-[clamp(3rem,9vw,8rem)] leading-[0.92] text-mint">
+          <h1 className="text-[clamp(3rem,8.5vw,7.5rem)] leading-[0.92] text-mint">
             Reforma
             <br />
             8PLUS2
