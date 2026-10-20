@@ -94,9 +94,6 @@ function Index() {
       </Section>
 
       <Section kicker="Aktuality" title={<>Pohled <span className="text-mint">stínové vlády</span></>}>
-        <p className="mb-12 max-w-3xl text-xl text-muted-foreground">
-          Články, tiskové zprávy a videa přidáváme průběžně podle aktuálního politického dění. Zatím zde žádné nejsou.
-        </p>
         <div className="flex flex-wrap gap-px bg-foreground/15">
           {ministers.map((m) => (
             <div key={m.n} className="min-w-[240px] flex-1 bg-navy/50 p-8">
