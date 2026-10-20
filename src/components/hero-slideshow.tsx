@@ -5,8 +5,8 @@ import hero3 from "@/assets/rz-hero-3.jpg.asset.json";
 import { useAudience } from "@/components/audience-provider";
 
 const SLIDES = [
-  { src: hero2.url, alt: "Renáta Zajíčková v parku s tabletem" },
   { src: hero3.url, alt: "Renáta Zajíčková se žáky ve školní třídě" },
+  { src: hero2.url, alt: "Renáta Zajíčková v parku s tabletem" },
 ];
 
 const INTERVAL = 6000;
