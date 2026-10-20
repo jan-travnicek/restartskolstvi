@@ -247,7 +247,7 @@ export const audienceCopy: Record<Audience, AudienceCopy> = {
     invitation: "Níže na tomto webu naleznete všechna navržená opatření přehledně vysvětlená. Přečtěte si je, dejte nám vědět, co si myslíte – a pokud s reformou souhlasíte, podpořte ji. Jen společně dokážeme změnit školství tak, aby dávalo smysl dnešním dětem i budoucím generacím.",
     diagnosis: [
       { t: "Méně drilu, více vzdělávání", d: "Devátý ročník se často soustředí na přípravu k přijímačkám. Dva roky společného středoškolského základu mají dětem nabídnout smysluplnější přípravu na život i další studium." },
-      { t: "Volba, která není slepou uličkou", d: "Děti potřebují čas zjistit, co jim jde. Reforma počítá s postupnou profilací a možností změnit vzdělávací cestu, když původní směr nevyhovuje." },
+      { t: "Volba, která není slepou uličkou", d: "Děti potřebují čas zjistit, co jim jde. Reforma umožní dětem postupnou profilaci a možnost jednoduše a bež ztráty času upravit vzdělávací cestu, když původní směr nevyhovuje." },
       { t: "Pomoc dřív, než přijde neúspěch", d: "Ověření na konci cyklů má včas odhalit potíže. Malá maturita po dvou letech střední školy má zabránit odchodu ze vzdělávání bez potvrzených kompetencí." },
     ],
     goals: ["Srozumitelná cesta od základní školy k dalšímu studiu nebo povolání, bez slepých uliček.", "Rozvoj talentu i přiměřená pomoc dětem, které ji potřebují. Výuka propojená se životem.", "Více prostoru pro učitele a kvalitní výuku. Podpora vzdělávání nekončí odchodem ze školy."],
