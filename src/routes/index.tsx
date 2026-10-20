@@ -4,7 +4,6 @@ import { useAudience } from "@/components/audience-provider";
 import schema from "@/assets/schema-8plus2.jpg.asset.json";
 import signature from "@/assets/podpis-rz.png.asset.json";
 import { EducationInfographic } from "@/components/education-infographic";
-import { AnimatedSchema } from "@/components/animated-schema";
 import { HeroSlideshow } from "@/components/hero-slideshow";
 
 export const Route = createFileRoute("/")({
@@ -84,11 +83,7 @@ function Index() {
           alt="Schéma Reformy 8PLUS2: modulární architektura regionálního vzdělávání od 3 do 18 let"
           className="mt-16"
         />
-        <AnimatedSchema
-          src={schema.url}
-          alt="Schéma Reformy 8PLUS2: modulární architektura regionálního vzdělávání od 3 do 18 let"
-          className="mt-8"
-        />
+        <div className="mt-12"><NextLink to="/opatreni">Všech 10 opatření podrobně</NextLink></div>
         <div className="mt-12"><NextLink to="/opatreni">Všech 10 opatření podrobně</NextLink></div>
       </Section>
 

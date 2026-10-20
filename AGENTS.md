@@ -13,7 +13,6 @@
 - Static reform content (pillars, measures, timeline) lives in `src/lib/content.ts`; pages import it so measures stay consistent across pages.
 - Shared header/footer/section primitives live in `src/components/site.tsx` and wrap all routes from `__root.tsx`.
 - Large diagrams/photos open through `SchemaViewer` (`src/components/schema-viewer.tsx`) instead of a plain link to the asset file, so readers get one consistent zoom/pan popup rather than a browser tab.
-- `AnimatedSchema` enhances the second homepage diagram with image-aligned hotspots; keep its image geometry separate from the shared viewer so other diagrams remain unchanged.
 - `EducationInfographic` rebuilds the first homepage diagram from typed stages and milestones in `src/lib/education-schema.ts`; keep path membership and ages in that source so diagram, exploration and tests agree.
 - Audience copy lives alongside canonical content in `src/lib/content.ts`; `getAudiencePillars` preserves measure identity and paragraph structure so every page presents the same proposal.
 - `AudienceProvider` wraps the shared site at the root and holds in-memory selection across client navigation; no page reload or browser storage is needed for this presentation preference.
