@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import hero2 from "@/assets/rz-hero-2.jpg.asset.json";
 import hero3 from "@/assets/rz-hero-3.jpg.asset.json";
+import { useAudience } from "@/components/audience-provider";
 
 const SLIDES = [
   { src: hero2.url, alt: "Renáta Zajíčková v parku s tabletem" },
@@ -11,6 +12,7 @@ const SLIDES = [
 const INTERVAL = 6000;
 
 export function HeroSlideshow() {
+  const { copy } = useAudience();
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -60,11 +62,11 @@ export function HeroSlideshow() {
             8PLUS2
           </h1>
           <p className="order-2 text-xl font-extrabold leading-tight md:col-start-2 md:row-span-2 md:row-start-1 md:self-end md:text-right md:text-3xl lg:text-4xl">
-            Místo devítky{"\u00a0"}
+            {copy.claim[0]}{"\u00a0"}
             <br />
-            dva roky na střední{"\u00a0"}
+            {copy.claim[1]}{"\u00a0"}
             <br />
-            <span className="text-mint">pro všechny děti</span>
+            <span className="text-mint">{copy.claim[2]}</span>
           </p>
           <div className="order-3 mt-2 flex flex-wrap items-center gap-6 md:col-start-1 md:row-start-2">
             <Link

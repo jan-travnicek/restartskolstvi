@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section, meta } from "@/components/site";
 import { experts, history, nextSteps } from "@/lib/content";
+import { useAudience } from "@/components/audience-provider";
 
 export const Route = createFileRoute("/odborna-opora")({
   head: () => meta("Od konceptu k legislativě – Reforma 8PLUS2", "Tři roky konzultací s experty, časová osa příprav, další kroky a odborníci, kteří reformu 8+2 konzultovali."),
@@ -21,12 +22,13 @@ function Steps({ items }: { items: { y: string; d: string }[] }) {
 }
 
 function Page() {
+  const { copy } = useAudience();
   return (
     <>
       <PageHero
         kicker="Realizace a odborná opora"
         title={<>Od konceptu<br /><span className="text-mint">k legislativě</span></>}
-        lead="Reforma 8+2 nevznikla od politického stolu. Je výsledkem více než tříletých konzultací s desítkami expertů, analytiků, zřizovatelů a ředitelů škol."
+        lead={copy.expertLead}
       />
       <Section kicker="Historie projektu" title="Jak jsme se připravovali"><Steps items={history} /></Section>
       <Section kicker="Vládní fáze" title="Další kroky"><Steps items={nextSteps} /></Section>

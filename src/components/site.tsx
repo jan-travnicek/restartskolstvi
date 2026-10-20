@@ -1,10 +1,14 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import logo from "@/assets/ods-logo.png.asset.json";
+import { ChevronDown, UsersRound } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuRadioGroup, DropdownMenuRadioItem } from "@/components/ui/dropdown-menu";
+import { useAudience } from "@/components/audience-provider";
+import { audienceOptions, isAudience } from "@/lib/content";
 
 const nav = [
   { to: "/opatreni", label: "10 opatření" },
-  { to: "/pro-koho", label: "Co mi reforma přinese" },
   { to: "/data", label: "Data místo dojmů" },
   { to: "/odborna-opora", label: "Odborná opora" },
   { to: "/myty-a-fakta", label: "Mýty vs. fakta" },
@@ -12,12 +16,32 @@ const nav = [
 ] as const;
 
 export function SiteHeader() {
+  const { audience, setAudience } = useAudience();
+  const selected = audienceOptions.find((option) => option.id === audience);
   return (
     <header className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6 px-6 py-8 md:px-16">
-      <Link to="/" className="text-lg font-bold leading-tight">
+      <Link to="/" className="shrink-0 text-lg font-bold leading-tight">
         Reforma<br />školství
       </Link>
-      <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold">
+      <nav aria-label="Hlavní navigace" className="order-3 flex w-full flex-wrap items-center gap-x-6 gap-y-4 text-sm font-semibold">
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button aria-label={`Pohled na reformu: ${selected?.label}`} className="h-12 w-full justify-between gap-3 bg-mint px-4 font-extrabold text-navy shadow-none hover:bg-mint/90 sm:w-64">
+              <UsersRound aria-hidden="true" />
+              <span className="flex-1 text-left">{selected?.label}</span>
+              <ChevronDown aria-hidden="true" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="start" sideOffset={8} className="w-64 max-w-[calc(100vw-3rem)] border-mint/30 bg-navy p-2 text-foreground shadow-none">
+            <DropdownMenuRadioGroup value={audience} onValueChange={(value) => { if (isAudience(value)) setAudience(value); }}>
+              {audienceOptions.map((option) => (
+                <DropdownMenuRadioItem key={option.id} value={option.id} className="min-h-11 cursor-pointer font-semibold focus:bg-mint focus:text-navy data-[state=checked]:text-mint data-[state=checked]:focus:text-navy">
+                  {option.label}
+                </DropdownMenuRadioItem>
+              ))}
+            </DropdownMenuRadioGroup>
+          </DropdownMenuContent>
+        </DropdownMenu>
         {nav.map((n) => (
           <Link key={n.to} to={n.to} className="opacity-80 hover:opacity-100" activeProps={{ className: "text-mint opacity-100" }}>
             {n.label}
@@ -60,7 +84,7 @@ export function PageHero({ kicker, title, lead }: { kicker: string; title: React
   );
 }
 
-export function NextLink({ to, children }: { to: (typeof nav)[number]["to"]; children: ReactNode }) {
+export function NextLink({ to, children }: { to: (typeof nav)[number]["to"] | "/pro-koho"; children: ReactNode }) {
   return (
     <Link to={to} className="inline-block text-2xl font-extrabold hover:text-mint">
       <span className="text-mint">→</span> {children}

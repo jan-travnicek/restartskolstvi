@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero, Section, meta } from "@/components/site";
-import { pillars, timeline } from "@/lib/content";
+import { timeline } from "@/lib/content";
+import { useAudience } from "@/components/audience-provider";
 import schema from "@/assets/schema-8plus2.jpg.asset.json";
 import { SchemaViewer } from "@/components/schema-viewer";
 
@@ -10,9 +11,10 @@ export const Route = createFileRoute("/opatreni/")({
 });
 
 function Page() {
+  const { pillars, copy } = useAudience();
   return (
     <>
-      <PageHero kicker="Srdce reformy" title={<>Architektura <span className="text-mint">8+2</span></>} lead="Tři pilíře, deset opatření. Klíčová slova: modularita, prostupnost, flexibilita." />
+      <PageHero kicker="Srdce reformy" title={<>Architektura <span className="text-mint">8+2</span></>} lead={copy.goals.join(" ")} />
       {pillars.map((p) => (
         <Section key={p.id} kicker={`Pilíř ${p.id}`} title={p.name}>
           <p className="-mt-6 mb-10 max-w-3xl text-xl font-bold">{p.goal}</p>

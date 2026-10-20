@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { meta } from "@/components/site";
 import { allMeasures } from "@/lib/content";
+import { useAudience } from "@/components/audience-provider";
 
 export const Route = createFileRoute("/opatreni/$slug")({
   loader: ({ params }) => {
@@ -10,7 +11,8 @@ export const Route = createFileRoute("/opatreni/$slug")({
   },
   head: ({ loaderData }) => {
     if (!loaderData) return { meta: [{ title: "Opatření nenalezeno" }, { name: "robots", content: "noindex" }] };
-    const m = allMeasures[loaderData.i]!;
+    const m = allMeasures[loaderData.i];
+    if (!m) return meta("Opatření nenalezeno – Reforma 8PLUS2", "Požadované opatření nebylo nalezeno.");
     return meta(`${m.n}. ${m.t} – Reforma 8PLUS2`, m.short);
   },
   component: Page,
@@ -18,7 +20,10 @@ export const Route = createFileRoute("/opatreni/$slug")({
 
 function Page() {
   const { i } = Route.useLoaderData();
-  const m = allMeasures[i]!;
+  const { pillars } = useAudience();
+  const measures = pillars.flatMap((p) => p.measures.map((measure) => ({ ...measure, pillar: p })));
+  const m = measures[i];
+  if (!m) throw notFound();
   const prev = allMeasures[i - 1];
   const next = allMeasures[i + 1];
   return (

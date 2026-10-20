@@ -11,6 +11,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import { SiteHeader, SiteFooter } from "../components/site";
+import { AudienceProvider } from "@/components/audience-provider";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
@@ -120,6 +121,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <AudienceProvider>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <div className="bg-poster min-h-screen text-foreground">
         <SiteHeader />
@@ -128,6 +130,7 @@ function RootComponent() {
         </main>
         <SiteFooter />
       </div>
+      </AudienceProvider>
     </QueryClientProvider>
   );
 }
