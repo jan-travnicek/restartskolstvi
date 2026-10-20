@@ -9,5 +9,5 @@
 - [ ] Confirm the next GitHub Actions run generates and uploads all 16 HTML pages (blocked: no access to the repository's Actions run or FTP server).
 
 # Animated infographic
-- [ ] Turn only the second homepage schema into an animated, clickable image while preserving its layout.
-- [ ] Verify explanations, animation controls, zoom and narrow-screen display.
+- [x] Turn only the second homepage schema into an animated, clickable image while preserving its layout.
+- [x] Verify explanations, animation controls, zoom and narrow-screen display.

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
 
 const MIN_SCALE = 1;
 const MAX_SCALE = 6;
@@ -105,19 +106,20 @@ export function SchemaViewer({ src, alt, className = "", trigger }: { src: strin
 
   return (
     <>
-      <button
+      <Button
         ref={triggerRef}
+        variant="ghost"
         type="button"
         onClick={() => setOpen(true)}
         aria-label="Otevřít schéma reformy v pop-okně se zvětšením"
         title={trigger ? "Zvětšit schéma" : undefined}
-        className={`group relative cursor-zoom-in overflow-hidden rounded ${trigger ? "inline-flex items-center justify-center" : "block w-full bg-foreground"} ${className}`}
+        className={`group relative h-auto cursor-zoom-in overflow-hidden rounded p-0 hover:bg-transparent ${trigger ? "inline-flex items-center justify-center" : "block w-full bg-foreground"} ${className}`}
       >
         {trigger ?? <img src={src} alt={alt} className="h-auto w-full" loading="lazy" />}
         {!trigger && <span className="pointer-events-none absolute bottom-4 right-4 inline-flex items-center gap-2 rounded bg-navy/85 px-4 py-2 text-sm font-bold text-mint opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
           <PlusIcon /> Zvětšit
         </span>}
-      </button>
+      </Button>
 
       {open && (
         <div
