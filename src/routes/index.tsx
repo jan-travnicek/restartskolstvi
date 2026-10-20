@@ -6,6 +6,7 @@ import signature from "@/assets/podpis-rz.png.asset.json";
 import profile from "@/assets/profilovka.jpg.asset.json";
 import { SchemaViewer } from "@/components/schema-viewer";
 import { HeroSlideshow } from "@/components/hero-slideshow";
+import { audiences, diagnosis, intro, pillarGoals, useAudience } from "@/lib/audiences";
 
 export const Route = createFileRoute("/")({
   head: () => meta("Reforma 8PLUS2 – Restart školství", "Místo devítky dva roky na střední pro všechny děti. Plně vyčíslená modernizace českého školství."),
@@ -19,13 +20,10 @@ const stats = [
   { v: "+2,3 až 2,8 mil. Kč", l: "odvede státu za život každý nový absolvent SŠ oproti člověku se základním vzděláním" },
 ];
 
-const diagnosis = [
-  { t: "Ekonomická černá díra", d: "Rozpočet školství se za dekádu zdvojnásobil, ale kvůli financování „za odučené hodiny“ (PHmax) a neřízené inkluzi se kvalita výuky nezlepšila." },
-  { t: "Ztracený lidský potenciál", d: "Až 10 % žáků nedokončí ZŠ, přes 30 000 středoškoláků ročně předčasně opouští studium a 40 % absolventů odborných škol nepracuje ve svém oboru." },
-  { t: "Systém v klinické smrti", d: "65 % pedagogů nevěří v přínos současné inkluze a 80 % rodičů nesouhlasí s jejím nastavením. Devátá třída se stala jen místem pro drilování testů Cermat." },
-];
-
 function Index() {
+  const { audience } = useAudience();
+  const i = intro[audience];
+  const label = audiences.find((a) => a.id === audience)!.label;
   return (
     <>
       <HeroSlideshow />
@@ -41,12 +39,12 @@ function Index() {
         </div>
       </section>
 
-      <Section kicker="Úvodem">
+      <Section kicker={`Úvodem · ${label}`}>
         <div className="grid gap-12 md:grid-cols-[1fr_2fr]">
-          <p className="display text-5xl md:text-6xl">Mozky našich lidí jsou <span className="text-mint">jedinou strategickou surovinou</span></p>
+          <p className="display text-5xl md:text-6xl">{i.head}</p>
           <div className="space-y-6 text-xl">
-            <p>Česká republika definitivně vyčerpala svůj model růstu založený na levné práci a energiích. Naší jedinou skutečnou a strategickou surovinou pro éru umělé inteligence jsou mozky našich lidí. Přesto stát stále plýtvá lidským kapitálem i veřejnými prostředky v systému, který ustrnul v devadesátých letech.</p>
-            <p className="text-muted-foreground">Předkládáme ucelenou architekturu 10 klíčových opatření rozdělených do tří strategických pilířů – konkrétní, daty podloženou mapu kroků, která zkrátí neefektivní pobyt mladých lidí ve vzdělávacím systému, propojí školy s reálnou ekonomikou a zastaví plýtvání veřejnými penězi.</p>
+            <p>{i.lead}</p>
+            <p className="text-muted-foreground">{i.body}</p>
             <div className="flex flex-wrap items-center justify-between gap-6 pt-4">
               <img src={profile.url} alt="Renáta Zajíčková" className="h-28 w-28 shrink-0 rounded-full object-cover sm:h-36 sm:w-36 md:h-44 md:w-44" />
               <div className="text-right">
@@ -60,7 +58,7 @@ function Index() {
 
       <Section kicker="Diagnóza" title={<>Proč model <span className="text-mint">9+0</span> selhává</>}>
         <div className="grid gap-12 md:grid-cols-3">
-          {diagnosis.map((d) => (
+          {diagnosis[audience].map((d) => (
             <div key={d.t}>
               <p className="text-2xl font-extrabold">{d.t}</p>
               <p className="mt-4 text-lg text-muted-foreground">{d.d}</p>
@@ -75,6 +73,7 @@ function Index() {
             <div key={p.id}>
               <p className="display text-6xl text-mint">{p.id}</p>
               <p className="mt-2 text-2xl font-extrabold">{p.name}</p>
+              <p className="mt-3 font-semibold">{pillarGoals[audience][p.id]}</p>
               <ul className="mt-4 space-y-1 text-muted-foreground">
                 {p.measures.map((m) => (
                   <li key={m.n}>
