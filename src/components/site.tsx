@@ -95,7 +95,7 @@ export function PageHero({ kicker, title, lead }: { kicker: string; title: React
   );
 }
 
-export function NextLink({ to, children }: { to: LinkProps["to"]; children: ReactNode }) {
+export function NextLink({ to, children }: { to: NonNullable<LinkProps["to"]>; children: ReactNode }) {
   return (
     <Link to={to} className="inline-block text-2xl font-extrabold hover:text-mint">
       <span className="text-mint">→</span> {children}
