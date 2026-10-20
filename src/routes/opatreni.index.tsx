@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero, Section, meta } from "@/components/site";
 import { timeline } from "@/lib/content";
 import { useAudience } from "@/components/audience-provider";
-import schema from "@/assets/schema-8plus2.jpg.asset.json";
+const schema = { url: "/media/schema-8plus2.jpg" };
 import { SchemaViewer } from "@/components/schema-viewer";
 
 export const Route = createFileRoute("/opatreni/")({

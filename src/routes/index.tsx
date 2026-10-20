@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { NextLink, Section, meta } from "@/components/site";
 import { useAudience } from "@/components/audience-provider";
-import schema from "@/assets/schema-8plus2.jpg.asset.json";
+const schema = { url: "/media/schema-8plus2.jpg" };
 import signature from "@/assets/podpis-rz.png.asset.json";
 import { EducationInfographic } from "@/components/education-infographic";
 import { HeroSlideshow } from "@/components/hero-slideshow";

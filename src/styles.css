@@ -160,7 +160,7 @@
 }
 @utility bg-poster {
   background-color: var(--royal);
-  background-image: url("/__l5e/assets-v1/dea6e567-b591-44b0-86b7-005cf181dc34/bg.jpg");
+  background-image: url("/media/bg.jpg");
   background-size: cover;
   background-position: center top;
   background-attachment: fixed;
