@@ -5,11 +5,10 @@ import { useAudience } from "@/components/audience-provider";
 import { EducationInfographic } from "@/components/education-infographic";
 import { Parallax, Reveal } from "@/components/v2-motion";
 import { economics } from "@/lib/content";
-import signature from "@/assets/podpis-rz.png.asset.json";
-
 const schema = { url: "/media/schema-8plus2.jpg" };
 const heroImg = { url: "/media/rz-hero-3.jpg" };
 const sideImg = { url: "/media/rz-hero-2.jpg" };
+const signature = { url: "/media/podpis-rz-ink.png" };
 
 export const Route = createFileRoute("/verze-2/")({
   head: () => meta("Verze 2 · Reforma 8PLUS2 – Restart školství", "Místo devítky dva roky na střední pro všechny děti. Plně vyčíslená modernizace českého školství."),
