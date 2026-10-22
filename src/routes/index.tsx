@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { NextLink, Section, meta } from "@/components/site";
 import { useAudience } from "@/components/audience-provider";
 const schema = { url: "/media/schema-8plus2.jpg" };
-import signature from "@/assets/podpis-rz.png.asset.json";
+const signature = { url: "/media/podpis-rz.png" };
 import { EducationInfographic } from "@/components/education-infographic";
 import { HeroSlideshow } from "@/components/hero-slideshow";
 
