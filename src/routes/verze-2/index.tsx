@@ -8,6 +8,7 @@ import { economics } from "@/lib/content";
 const schema = { url: "/media/schema-8plus2.jpg" };
 const heroImg = { url: "/media/rz-hero-3.jpg" };
 const sideImg = { url: "/media/rz-hero-2.jpg" };
+const kupkaImg = { url: "/media/martin-kupka.jpg" };
 const signature = { url: "/media/podpis-rz-ink.png" };
 
 export const Route = createFileRoute("/verze-2/")({
@@ -148,6 +149,33 @@ function Index() {
                 <p className="font-bold">Mgr. Renáta Zajíčková<br /><span className="font-normal text-ink/60">Stínová ministryně školství za ODS</span></p>
               </Reveal>
             </div>
+          </div>
+        </section>
+
+        {/* INTRO – MARTIN KUPKA */}
+        <section className="mx-auto max-w-7xl px-6 pb-28 md:px-16 md:pb-36">
+          <div className="grid gap-16 md:grid-cols-[7fr_5fr] md:items-center">
+            <div className="md:order-1">
+              <Reveal><Kicker light>Hlas ODS</Kicker></Reveal>
+              <Reveal delay={100}><h2 className="display text-5xl md:text-7xl">Reforma, <span className="text-royal">ne dílčí změny</span></h2></Reveal>
+              <Reveal delay={200}><p className="mt-8 text-xl leading-relaxed">„České školství nepotřebuje další dílčí změny, ale skutečnou reformu. Nabízíme konkrétní systém 8+2, který zvýší kvalitu vzdělávání a připraví děti lépe na jejich budoucí profesní život.</p></Reveal>
+              <Reveal delay={300}><p className="mt-6 text-lg leading-relaxed text-ink/65">Osm let základní školy, dva povinné roky na střední, větší prostupnost a mnohem užší spojení škol s praxí jsou cestou ke vzdělávání pro 21. století.“</p></Reveal>
+              <Reveal delay={400} className="mt-10 flex items-center gap-6">
+                <span className="h-px w-12 bg-royal" />
+                <p className="font-bold">Martin Kupka<br /><span className="font-normal text-ink/60">Předseda ODS</span></p>
+              </Reveal>
+            </div>
+            <Reveal className="relative md:order-2">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem]">
+                <Parallax speed={-0.08} className="absolute inset-0 -top-[10%] -bottom-[10%]">
+                  <img src={kupkaImg.url} alt="Martin Kupka, předseda ODS" loading="lazy" style={{ objectPosition: "32% 22%" }} className="h-full w-full object-cover" />
+                </Parallax>
+              </div>
+              <div className="absolute -bottom-6 -left-4 rounded-2xl bg-royal px-6 py-4 text-foreground shadow-xl md:-left-8">
+                <p className="display text-3xl">8+2</p>
+                <p className="text-sm font-bold">systém, ne dílčí změny</p>
+              </div>
+            </Reveal>
           </div>
         </section>
 
