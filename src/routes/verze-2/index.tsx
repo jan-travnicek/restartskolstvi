@@ -59,27 +59,28 @@ function Index() {
         <Parallax speed={-0.25} className="absolute inset-0 -top-[15%] -bottom-[15%] -z-10">
           <img src={heroImg.url} alt="Renáta Zajíčková se žáky ve školní třídě" className="h-full w-full scale-110 object-cover object-center" />
         </Parallax>
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-navy via-navy/40 to-navy/10" />
+        <div className="absolute inset-0 -z-10 bg-navy/20" />
+        <div className="absolute inset-x-0 bottom-0 -z-10 h-1/3 bg-gradient-to-t from-navy via-navy/80 to-transparent" />
         <Parallax speed={0.15} className="pointer-events-none absolute -right-24 top-10 -z-10 hidden md:block">
           <div className="v2-float h-72 w-72 rounded-full bg-mint/25 blur-3xl" />
         </Parallax>
 
         <div className="mx-auto w-full max-w-7xl px-6 pb-8 pt-16 md:px-16 md:pb-10">
-          <p className="v2-rise mb-5 inline-flex items-center gap-2 rounded-full border border-foreground/30 bg-navy/40 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] backdrop-blur" style={{ animationDelay: "100ms" }}>
+          <p className="v2-rise mb-5 inline-flex items-center gap-2 rounded-full border border-foreground/30 bg-navy/60 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] backdrop-blur" style={{ animationDelay: "100ms" }}>
             <span className="h-2 w-2 animate-pulse rounded-full bg-mint" /> Vize pro vzdělané Česko 2030+
           </p>
-          <h1 className="v2-rise text-[clamp(3rem,8.5vw,8rem)] leading-[0.85]" style={{ animationDelay: "200ms" }}>
+          <h1 className="v2-rise text-[clamp(3rem,8.5vw,8rem)] leading-[0.85] [text-shadow:0_4px_40px_rgba(10,15,50,0.85)]" style={{ animationDelay: "200ms" }}>
             Reforma<br /><span className="text-mint">8PLUS2</span>
           </h1>
           <div className="mt-6 grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
-            <p className="v2-rise max-w-xl text-2xl font-extrabold leading-tight md:text-3xl" style={{ animationDelay: "400ms" }}>
+            <p className="v2-rise max-w-xl text-2xl font-extrabold leading-tight md:text-3xl [text-shadow:0_2px_24px_rgba(10,15,50,0.9)]" style={{ animationDelay: "400ms" }}>
               {copy.claim[0]} {copy.claim[1]} <span className="text-mint">{copy.claim[2]}</span>
             </p>
             <div className="v2-rise flex flex-wrap gap-4" style={{ animationDelay: "550ms" }}>
               <Link to="/verze-2/opatreni" className="group inline-flex items-center gap-3 rounded-full bg-mint px-8 py-4 text-lg font-extrabold text-navy transition-all hover:gap-5 hover:shadow-[0_0_40px_-5px_var(--mint)]">
                 Balík 10 opatření <ArrowRight className="h-5 w-5" />
               </Link>
-              <Link to="/verze-2/data" className="inline-flex items-center gap-3 rounded-full border border-foreground/40 px-8 py-4 text-lg font-extrabold backdrop-blur transition-colors hover:bg-foreground/10">
+              <Link to="/verze-2/data" className="inline-flex items-center gap-3 rounded-full border border-foreground/40 bg-navy/50 px-8 py-4 text-lg font-extrabold backdrop-blur transition-colors hover:bg-navy/70">
                 Data
               </Link>
             </div>
