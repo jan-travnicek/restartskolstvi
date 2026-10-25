@@ -111,20 +111,8 @@ function Index() {
         </div>
       </div>
 
-      {/* STATS */}
-      <section id="prehled" className="mx-auto max-w-7xl px-6 py-24 md:px-16 md:py-32">
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {copy.stats.map((s, i) => (
-            <Reveal key={s.v} delay={i * 120} className="group rounded-3xl border border-foreground/15 bg-navy/40 p-8 backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-mint/60 hover:bg-navy/70">
-              <p className="display text-5xl text-mint transition-transform duration-500 group-hover:scale-105 md:text-6xl">{s.v}</p>
-              <p className="mt-5 leading-relaxed text-muted-foreground">{s.l}</p>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
       {/* DIAGNOSIS */}
-      <section className="relative mx-auto max-w-7xl px-6 pb-32 md:px-16">
+      <section id="diagnostika" className="relative mx-auto max-w-7xl px-6 pb-32 pt-24 md:px-16 md:pt-32">
         <Parallax speed={0.2} className="pointer-events-none absolute -top-10 right-0 select-none font-display text-[30vw] leading-none text-foreground/5 md:text-[20rem]">
           <span aria-hidden="true">9+0</span>
         </Parallax>
