@@ -17,8 +17,13 @@ export const Route = createFileRoute("/verze-2/")({
   component: Index,
 });
 
-const ministers = [
-  { n: "Jan Lipavský", a: "Národní bezpečnost a odolnost vůči dezinformacím" },
+const ministers: { n: string; a: string; q?: string; href?: string }[] = [
+  {
+    n: "Jan Lipavský",
+    a: "Malá maturita jako pojistka bezpečnosti státu",
+    q: "„Nejlevnější a nejúčinnější zbraní proti ruské hybridní válce a dezinformacím je vzdělaný občan. Malá maturita garantuje, že každý mladý člověk opustí povinné vzdělávání s občanskou a mediální gramotností.“",
+    href: "https://www.ods.cz/clanek/28986-misto-devitky-dva-roky-na-stredni-pro-vsechny-deti-ods-spousti-kampan-k-reforme-8-2-vzdelani-predstavuje-jako-klic-k-bezpecnosti-statu",
+  },
   { n: "Radim Ivan", a: "Rozvoj regionů a svazkové školy" },
   { n: "Jiří Havránek", a: "Trh práce a důchodový systém" },
   { n: "Pavel Drobil", a: "Průmysl a propojení s praxí" },
@@ -244,6 +249,12 @@ function Index() {
                 <p className="flex h-11 w-11 items-center justify-center rounded-full bg-mint font-extrabold text-navy">{m.n.split(" ").map((w) => w[0]).join("")}</p>
                 <p className="mt-5 text-lg font-extrabold">{m.n}</p>
                 <p className="mt-1 text-ink/65">{m.a}</p>
+                {m.q && <p className="mt-4 border-l-2 border-mint pl-4 text-sm italic leading-relaxed text-ink/80">{m.q}</p>}
+                {m.href && (
+                  <a href={m.href} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-royal hover:underline">
+                    Tisková zpráva <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                )}
               </Reveal>
             ))}
           </div>
