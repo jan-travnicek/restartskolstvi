@@ -26,7 +26,7 @@ const ministers = [
   { n: "Martin Kupka", a: "Moderní stát a vzdělávací účty" },
 ];
 
-const marquee = ["8 let základní školy", "2 roky na střední", "Malá maturita", "Konec PHmax", "Revize inkluze", "Velká maturita", "Cykly 3+3+2"];
+const marquee = ["8 let základní školy", "2 roky na střední", "Malá maturita", "Konec PHmax", "Revize inkluze", "Velká maturita", "TŘI STUPNĚ ZÁKLADKY\n✦"];
 
 const next = [
   { to: "/pro-koho", t: "Co reforma přinese vám", k: "Pro koho" },
