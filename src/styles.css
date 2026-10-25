@@ -324,3 +324,11 @@
   .v2-reveal { opacity: 1; transform: none; transition: none; }
   .v2-rise, .v2-marquee, .v2-float { animation: none; }
 }
+
+@keyframes book-flip-next { from { transform: rotateY(0deg); } to { transform: rotateY(-100deg); opacity: .4; } }
+@keyframes book-flip-prev { from { transform: rotateY(0deg); } to { transform: rotateY(100deg); opacity: .4; } }
+@keyframes book-shade { to { opacity: 1; } }
+@keyframes book-in { from { opacity: .3; transform: scale(.97); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  [style*="book-flip"] { animation-duration: 1ms !important; }
+}

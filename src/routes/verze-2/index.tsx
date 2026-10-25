@@ -5,6 +5,7 @@ import { useAudience } from "@/components/audience-provider";
 import { EducationInfographic } from "@/components/education-infographic";
 import { Parallax, Reveal } from "@/components/v2-motion";
 import { economics } from "@/lib/content";
+import { MeasuresBook } from "@/components/measures-book";
 const schema = { url: "/media/schema-8plus2.jpg" };
 const heroImg = { url: "/media/rz-hero-3.jpg" };
 const sideImg = { url: "/media/rz-hero-2.jpg" };
@@ -211,6 +212,12 @@ function Index() {
         </section>
 
         {/* ECONOMICS */}
+        <section className="mx-auto max-w-7xl px-6 pb-28 md:px-16 md:pb-36">
+          <Reveal><Kicker light>Listujte reformou</Kicker></Reveal>
+          <Reveal delay={100}><h2 className="display mb-16 text-6xl md:text-8xl">Kniha <span className="text-royal">10 opatření</span></h2></Reveal>
+          <Reveal delay={200}><MeasuresBook pillars={pillars} /></Reveal>
+        </section>
+
         <section className="bg-royal/5 py-28 md:py-36">
           <div className="mx-auto max-w-7xl px-6 md:px-16">
             <Reveal><Kicker light>Data místo dojmů</Kicker></Reveal>
