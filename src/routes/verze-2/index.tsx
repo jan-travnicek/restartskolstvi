@@ -64,15 +64,15 @@ function Index() {
           <div className="v2-float h-72 w-72 rounded-full bg-mint/25 blur-3xl" />
         </Parallax>
 
-        <div className="mx-auto w-full max-w-7xl px-6 pb-10 pt-28 md:px-16 md:pb-12">
-          <p className="v2-rise mb-6 inline-flex items-center gap-2 rounded-full border border-foreground/30 bg-navy/40 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] backdrop-blur" style={{ animationDelay: "100ms" }}>
+        <div className="mx-auto w-full max-w-7xl px-6 pb-8 pt-16 md:px-16 md:pb-10">
+          <p className="v2-rise mb-5 inline-flex items-center gap-2 rounded-full border border-foreground/30 bg-navy/40 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] backdrop-blur" style={{ animationDelay: "100ms" }}>
             <span className="h-2 w-2 animate-pulse rounded-full bg-mint" /> Vize pro vzdělané Česko 2030+
           </p>
-          <h1 className="v2-rise text-[clamp(3.5rem,11vw,10rem)] leading-[0.85]" style={{ animationDelay: "200ms" }}>
+          <h1 className="v2-rise text-[clamp(3rem,8.5vw,8rem)] leading-[0.85]" style={{ animationDelay: "200ms" }}>
             Reforma<br /><span className="text-mint">8PLUS2</span>
           </h1>
-          <div className="mt-8 grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
-            <p className="v2-rise max-w-xl text-2xl font-extrabold leading-tight md:text-3xl lg:text-4xl" style={{ animationDelay: "400ms" }}>
+          <div className="mt-6 grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
+            <p className="v2-rise max-w-xl text-2xl font-extrabold leading-tight md:text-3xl" style={{ animationDelay: "400ms" }}>
               {copy.claim[0]} {copy.claim[1]} <span className="text-mint">{copy.claim[2]}</span>
             </p>
             <div className="v2-rise flex flex-wrap gap-4" style={{ animationDelay: "550ms" }}>
@@ -84,18 +84,18 @@ function Index() {
               </Link>
             </div>
           </div>
-          <a href="#diagnostika" className="mt-10 hidden items-center gap-3 text-sm font-bold uppercase tracking-widest opacity-70 hover:opacity-100 lg:inline-flex">
+          <a href="#diagnostika" className="mt-8 hidden items-center gap-3 text-sm font-bold uppercase tracking-widest opacity-70 hover:opacity-100 lg:inline-flex">
             <ArrowDown className="h-4 w-4 animate-bounce" /> Posunout dál
           </a>
         </div>
 
         {/* Čtyři hlavní sdělení – viditelná hned při načtení */}
-        <div id="prehled" className="mx-auto w-full max-w-7xl px-6 pb-8 md:px-16 md:pb-12">
+        <div id="prehled" className="mx-auto w-full max-w-7xl px-6 pb-8 md:px-16 md:pb-10">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {copy.stats.map((s, i) => (
-              <div key={s.v} className="v2-rise group rounded-3xl border border-foreground/15 bg-navy/40 p-6 backdrop-blur transition-all duration-500 hover:-translate-y-1.5 hover:border-mint/60 hover:bg-navy/70 md:p-8" style={{ animationDelay: `${650 + i * 120}ms` }}>
-                <p className="display text-4xl text-mint transition-transform duration-500 group-hover:scale-105 md:text-5xl">{s.v}</p>
-                <p className="mt-4 leading-relaxed text-muted-foreground">{s.l}</p>
+              <div key={s.v} className="v2-rise group rounded-3xl border border-foreground/15 bg-navy/40 p-6 backdrop-blur transition-all duration-500 hover:-translate-y-1.5 hover:border-mint/60 hover:bg-navy/70" style={{ animationDelay: `${650 + i * 120}ms` }}>
+                <p className="display text-4xl text-mint transition-transform duration-500 group-hover:scale-105">{s.v}</p>
+                <p className="mt-3 leading-relaxed text-muted-foreground">{s.l}</p>
               </div>
             ))}
           </div>
