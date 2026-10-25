@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { meta } from "@/components/site";
 import { useAudience } from "@/components/audience-provider";
 import { EducationInfographic } from "@/components/education-infographic";
