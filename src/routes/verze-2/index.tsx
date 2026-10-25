@@ -55,7 +55,7 @@ function Index() {
   return (
     <div className="overflow-x-clip">
       {/* HERO – parallax */}
-      <section className="relative isolate flex min-h-svh flex-col justify-end overflow-hidden">
+      <section className="relative isolate flex min-h-[calc(100svh-6rem)] flex-col justify-end overflow-hidden md:min-h-[calc(100svh-7.5rem)]">
         <Parallax speed={-0.25} className="absolute inset-0 -top-[15%] -bottom-[15%] -z-10">
           <img src={heroImg.url} alt="Renáta Zajíčková se žáky ve školní třídě" className="h-full w-full scale-110 object-cover object-center" />
         </Parallax>
