@@ -59,7 +59,8 @@ function Index() {
         <Parallax speed={-0.25} className="absolute inset-0 -top-[15%] -bottom-[15%] -z-10">
           <img src={heroImg.url} alt="Renáta Zajíčková se žáky ve školní třídě" className="h-full w-full scale-110 object-cover object-center" />
         </Parallax>
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-navy via-navy/40 to-navy/10" />
+        <div className="absolute inset-0 -z-10 bg-navy/20" />
+        <div className="absolute inset-x-0 bottom-0 -z-10 h-1/3 bg-gradient-to-t from-navy via-navy/80 to-transparent" />
         <Parallax speed={0.15} className="pointer-events-none absolute -right-24 top-10 -z-10 hidden md:block">
           <div className="v2-float h-72 w-72 rounded-full bg-mint/25 blur-3xl" />
         </Parallax>
