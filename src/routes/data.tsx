@@ -14,10 +14,10 @@ const studies = [
 ];
 
 const compare = [
-  ["Model", "8+2 – povinné vzdělávání 10 let", "9+0, případně tupé škrty 8+0"],
-  ["Peníze", "Investice s vyčíslenou návratností (ROI)", "Lití miliard do černé díry"],
-  ["Financování škol", "Normativ – peníze následují dítě", "PHmax – placení odučených hodin"],
-  ["Rozhodování", "Data a analýzy", "Byrokracie a „klid na práci“"],
+  ["Model", "8+2 – povinné vzdělávání 10 let", "9+0 - škola bez základní profesní kvalifikace"],
+  ["Peníze", "Investice s vyčíslenou návratností (ROI)", "Další desítky miliard v neefektivním systému"],
+  ["Financování škol", "Normativ – peníze následují dítě", "PHmax – placení odučených hodin bez efektu"],
+  ["Rozhodování", "Data, analýzy, jasné cíle", "Byrokracie, dojmy, klid na práci"],
 ];
 
 function Page() {
@@ -66,7 +66,7 @@ function Page() {
               <tr className="border-b-2 border-mint">
                 <th className="py-4 pr-6" />
                 <th className="py-4 pr-6 text-2xl font-extrabold text-mint">Vize ODS</th>
-                <th className="py-4 text-2xl font-extrabold text-muted-foreground">Přístup ANO</th>
+                <th className="py-4 text-2xl font-extrabold text-muted-foreground">Systém z devadesátých let</th>
               </tr>
             </thead>
             <tbody>
