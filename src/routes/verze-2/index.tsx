@@ -17,12 +17,13 @@ export const Route = createFileRoute("/verze-2/")({
   component: Index,
 });
 
-const ministers: { n: string; a: string; q?: string; href?: string }[] = [
+const ministers: { n: string; a: string; q?: string; href?: string; photo?: string }[] = [
   {
     n: "Jan Lipavský",
     a: "Malá maturita jako pojistka bezpečnosti státu",
     q: "„Nejlevnější a nejúčinnější zbraní proti ruské hybridní válce a dezinformacím je vzdělaný občan. Malá maturita garantuje, že každý mladý člověk opustí povinné vzdělávání s občanskou a mediální gramotností.“",
     href: "https://www.ods.cz/clanek/28986-misto-devitky-dva-roky-na-stredni-pro-vsechny-deti-ods-spousti-kampan-k-reforme-8-2-vzdelani-predstavuje-jako-klic-k-bezpecnosti-statu",
+    photo: "/media/jan-lipavsky.jpg",
   },
   { n: "Radim Ivan", a: "Rozvoj regionů a svazkové školy" },
   { n: "Jiří Havránek", a: "Trh práce a důchodový systém" },
@@ -247,7 +248,11 @@ function Index() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {ministers.map((m, i) => (
               <Reveal key={m.n} delay={(i % 4) * 100} className="rounded-2xl border border-ink/10 bg-card p-7 transition-colors duration-300 hover:border-royal/40">
-                <p className="flex h-11 w-11 items-center justify-center rounded-full bg-mint font-extrabold text-navy">{m.n.split(" ").map((w) => w[0]).join("")}</p>
+                {m.photo ? (
+                  <img src={m.photo} alt={m.n} className="h-16 w-16 rounded-full object-cover object-top ring-2 ring-mint/60" />
+                ) : (
+                  <p className="flex h-11 w-11 items-center justify-center rounded-full bg-mint font-extrabold text-navy">{m.n.split(" ").map((w) => w[0]).join("")}</p>
+                )}
                 <p className="mt-5 text-lg font-extrabold">{m.n}</p>
                 <p className="mt-1 text-ink/65">{m.a}</p>
                 {m.q && <p className="mt-4 border-l-2 border-mint pl-4 text-sm italic leading-relaxed text-ink/80">{m.q}</p>}
