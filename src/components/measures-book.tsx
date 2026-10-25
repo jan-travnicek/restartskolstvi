@@ -34,7 +34,7 @@ export function MeasuresBook({ pillars }: { pillars: Pillar[] }) {
     return () => el.removeEventListener("keydown", onKey);
   }, [go, i]);
 
-  const m = items[i];
+  const m = items[i]!;
   const old = flip ? items[flip.from] : null;
 
   const Page = ({ item, n }: { item: (typeof items)[number]; n: number }) => (
@@ -68,10 +68,10 @@ export function MeasuresBook({ pillars }: { pillars: Pillar[] }) {
       tabIndex={0}
       aria-roledescription="kniha opatření"
       className="outline-none"
-      onTouchStart={(e) => (touch.current = e.touches[0].clientX)}
+      onTouchStart={(e) => (touch.current = e.touches[0]?.clientX ?? null)}
       onTouchEnd={(e) => {
         if (touch.current == null) return;
-        const dx = e.changedTouches[0].clientX - touch.current;
+        const dx = (e.changedTouches[0]?.clientX ?? touch.current) - touch.current;
         if (Math.abs(dx) > 50) go(i + (dx < 0 ? 1 : -1));
         touch.current = null;
       }}
