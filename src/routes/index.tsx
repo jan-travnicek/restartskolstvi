@@ -115,7 +115,7 @@ function Index() {
           <div className="grid gap-16 md:grid-cols-[7fr_5fr] md:items-center">
             <div className="md:order-1">
               <Reveal><Kicker light>Hlas ODS</Kicker></Reveal>
-              <Reveal delay={100}><h2 className="display text-5xl md:text-7xl">Reforma, <span className="text-royal">ne dílčí změny</span></h2></Reveal>
+              <Reveal delay={100}><h2 className="display text-5xl md:text-7xl">Skutečná reforma, <span className="text-royal">ne dílčí změny</span></h2></Reveal>
               <Reveal delay={200}><p className="mt-8 text-xl leading-relaxed">„České školství nepotřebuje další dílčí změny, ale skutečnou reformu. Nabízíme konkrétní systém 8+2, který zvýší kvalitu vzdělávání a připraví děti lépe na jejich budoucí profesní život.</p></Reveal>
               <Reveal delay={300}><p className="mt-6 text-lg leading-relaxed text-ink/65">Osm let základní školy, dva povinné roky na střední, větší prostupnost a mnohem užší spojení škol s praxí jsou cestou ke vzdělávání pro 21. století.“</p></Reveal>
               <Reveal delay={400} className="mt-10 flex items-center gap-6">
