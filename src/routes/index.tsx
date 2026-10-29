@@ -26,7 +26,6 @@ const ministers = [
   { n: "Martin Kupka", a: "Moderní stát a vzdělávací účty" },
 ];
 
-const marquee = ["8 let základní školy", "2 roky na střední", "Malá maturita", "Konec PHmax", "Revize inkluze", "Velká maturita", "TŘI STUPNĚ ZÁKLADKY\n✦"];
 
 const next = [
   { to: "/pro-koho", t: "Co reforma přinese vám", k: "Pro koho" },
@@ -51,14 +50,6 @@ function Index() {
       {/* HERO – původní slideshow */}
       <HeroSlideshow />
 
-      {/* MARQUEE */}
-      <div className="overflow-hidden border-y border-navy/20 bg-mint py-5 text-navy">
-        <div className="v2-marquee flex w-max gap-12 whitespace-nowrap font-display text-3xl uppercase md:text-4xl">
-          {[...marquee, ...marquee].map((m, i) => (
-            <span key={i} className="flex items-center gap-12">{m}<span aria-hidden="true">✦</span></span>
-          ))}
-        </div>
-      </div>
 
       {/* STATS */}
       <section id="prehled" className="mx-auto max-w-7xl px-6 py-24 md:px-16 md:py-32">
