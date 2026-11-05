@@ -54,6 +54,30 @@ const slides: { title: string; body: ReactNode }[] = [
     ),
   },
   {
+    title: "Komplexní balík 10 opatření",
+    body: (
+      <div className="flex h-full flex-col justify-center p-[120px]">
+        <Kicker>Víc než kratší základka</Kicker>
+        <div className="mt-6"><Title>Komplexní balík<br /><span className="text-primary">10 opatření</span></Title></div>
+        <p className="mt-10 max-w-[1300px] text-foreground/85" style={{ fontSize: 36, lineHeight: 1.3 }}>
+          Reforma 8PLUS2 neřeší jen délku základní školy. Nabízí řešení pro přijímačky, inkluzi, maturity, financování, administrativu i propojení škol s praxí.
+        </p>
+        <div className="mt-16 grid grid-cols-3 gap-10">
+          {[
+            ["8 + 2", "Struktura vzdělávání"],
+            ["Kvalita", "Zkoušky, maturity, data"],
+            ["Efektivita", "Financování a řízení škol"],
+          ].map(([v, l]) => (
+            <div key={v} className="rounded-2xl border border-foreground/25 bg-foreground/10 p-10">
+              <p className="font-display uppercase text-primary" style={{ fontSize: 72, lineHeight: 1 }}>{v}</p>
+              <p className="mt-4 text-foreground" style={{ fontSize: 30 }}>{l}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    ),
+  },
+  {
     title: "Revize inkluze",
     body: (
       <div className="grid h-full grid-cols-[1fr_1.1fr] gap-[100px] p-[120px]">
@@ -87,30 +111,6 @@ const slides: { title: string; body: ReactNode }[] = [
           <Point n="01" t="Méně stresu pro děti" d="Nahrazuje stresující přijímačky a srozumitelně ukáže, co dítě zvládá." />
           <Point n="02" t="Data o kvalitě škol" d="Stát i zřizovatelé získají srovnatelná data o přidané hodnotě jednotlivých škol." />
           <Point n="03" t="Méně regionálních nerovností" d="Objektivní a společný výchozí bod pro další studium na střední škole." />
-        </div>
-      </div>
-    ),
-  },
-  {
-    title: "Komplexní balík 10 opatření",
-    body: (
-      <div className="flex h-full flex-col justify-center p-[120px]">
-        <Kicker>Víc než kratší základka</Kicker>
-        <div className="mt-6"><Title>Komplexní balík<br /><span className="text-primary">10 opatření</span></Title></div>
-        <p className="mt-10 max-w-[1300px] text-foreground/85" style={{ fontSize: 36, lineHeight: 1.3 }}>
-          Reforma 8PLUS2 neřeší jen délku základní školy. Nabízí řešení pro přijímačky, inkluzi, maturity, financování, administrativu i propojení škol s praxí.
-        </p>
-        <div className="mt-16 grid grid-cols-3 gap-10">
-          {[
-            ["8 + 2", "Struktura vzdělávání"],
-            ["Kvalita", "Zkoušky, maturity, data"],
-            ["Efektivita", "Financování a řízení škol"],
-          ].map(([v, l]) => (
-            <div key={v} className="rounded-2xl border border-foreground/25 bg-foreground/10 p-10">
-              <p className="font-display uppercase text-primary" style={{ fontSize: 72, lineHeight: 1 }}>{v}</p>
-              <p className="mt-4 text-foreground" style={{ fontSize: 30 }}>{l}</p>
-            </div>
-          ))}
         </div>
       </div>
     ),
