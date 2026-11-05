@@ -156,25 +156,44 @@ const slides: { title: string; body: ReactNode }[] = [
         <h2 className="mt-4 font-display uppercase leading-[1.08] text-foreground" style={{ fontSize: 100 }}>
           Petr <span className="text-primary">Paták</span>
         </h2>
-        <p className="mt-3 text-foreground/85" style={{ fontSize: 30 }}>Senátor za Kladno · ředitel SPgŠ a SOŠ Kladno · 20 let ve školství</p>
-        <p className="mt-14 font-bold uppercase tracking-[0.12em] text-primary" style={{ fontSize: 30 }}>Moje priority</p>
-        <div className="mt-6 grid grid-cols-5 gap-6">
+        <p className="mt-3 text-foreground/85" style={{ fontSize: 30 }}>Senátor Parlamentu ČR | volební obvod č. 30 – Kladno</p>
+        <div className="mt-12 grid grid-cols-2 gap-[80px]">
           {[
-            ["Reforma z praxe", "Změny, které fungují ve skutečných školách."],
-            ["Funkční inkluze", "Odborná podpora, individuální přístup, méně papírů."],
-            ["Férové přijímačky", "Méně stresu, lepší návaznost ZŠ a SŠ."],
-            ["Podpora pedagogů", "Důvěra, autorita a autonomie škol."],
-            ["Moderní vzdělávání", "Talenty, inovace a smysluplná AI."],
-          ].map(([t, d], i) => (
-            <div key={t} className="rounded-lg bg-foreground/10 p-7">
-              <span className="font-display text-primary" style={{ fontSize: 56, lineHeight: 1 }}>{String(i + 1).padStart(2, "0")}</span>
-              <p className="mt-4 font-bold text-foreground" style={{ fontSize: 30, lineHeight: 1.15 }}>{t}</p>
-              <p className="mt-3 text-foreground/80" style={{ fontSize: 24, lineHeight: 1.3 }}>{d}</p>
+            {
+              h: "Ředitel školy, který zná školství z praxe",
+              items: [
+                "Ve školství od roku 2006, od roku 2015 ředitel SPgŠ a SOŠ Kladno.",
+                "Ocenění Ředitel budoucnosti a Zlatý Středočeský Ámos 2026.",
+                "Prokazatelné výsledky v modernizaci školy, rozvoji vzdělávání a řízení změn.",
+                "Realizace rozsáhlých investic, rozvoj mezinárodní spolupráce a zavádění AI do vzdělávání.",
+                "Každodenní zkušenosti s problémy ředitelů, učitelů, žáků a rodičů.",
+              ],
+            },
+            {
+              h: "Moje priority",
+              items: [
+                "Reforma školství vycházející z praxe – změny musí fungovat ve skutečných školách, nejen na papíře.",
+                "Funkční inkluze – dostupná odborná podpora, individuální přístup a méně administrativy.",
+                "Spravedlivější přijímačky – snížení stresu, lepší návaznost základního a středního vzdělávání.",
+                "Podpora učitelů a ředitelů – důvěra, autorita pedagoga a větší autonomie škol.",
+                "Moderní vzdělávání – rozvoj talentů, inovace a smysluplné využívání AI.",
+              ],
+            },
+          ].map((col) => (
+            <div key={col.h} className="border-t border-foreground/25 pt-6">
+              <p className="font-bold text-primary" style={{ fontSize: 32 }}>{col.h}</p>
+              <ul className="mt-5 space-y-3">
+                {col.items.map((it) => (
+                  <li key={it} className="flex gap-4 text-foreground/90" style={{ fontSize: 24, lineHeight: 1.3 }}>
+                    <span className="text-primary">■</span><span>{it}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
-        <blockquote className="mt-14 border-l-4 border-primary pl-8 italic text-foreground" style={{ fontSize: 32, lineHeight: 1.35 }}>
-          „Vím, co školy skutečně potřebují. Do Senátu chci prosazovat změny, které budou fungovat.“
+        <blockquote className="mt-12 border-l-4 border-primary pl-8 italic text-foreground" style={{ fontSize: 30, lineHeight: 1.35 }}>
+          „Ve školství pracuji přes 20 let. Vím, co školy skutečně potřebují. Do Senátu chci přinášet zkušenosti z praxe a prosazovat změny, které budou fungovat.“
         </blockquote>
       </div>
     ),
