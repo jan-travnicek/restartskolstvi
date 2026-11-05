@@ -50,7 +50,7 @@ const slides: { title: string; body: ReactNode }[] = [
             Místo devítky<br />dva roky na střední<br /><span className="text-primary">pro všechny děti</span>
           </h1>
         </div>
-        <p className="text-foreground/80" style={{ fontSize: 32 }}>Revize inkluze · Jednotná výstupní zkouška · restartskolstvi.cz</p>
+        <p className="text-foreground/80" style={{ fontSize: 32 }}>Vize občanských demokratů pro vzdělané Česko</p>
       </div>
     ),
   },
