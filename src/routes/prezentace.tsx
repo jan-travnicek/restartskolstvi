@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { ChevronLeft, ChevronRight, Maximize } from "lucide-react";
+import { allMeasures } from "@/lib/content";
 
 export const Route = createFileRoute("/prezentace")({
   head: () => ({
@@ -73,6 +74,38 @@ const slides: { title: string; body: ReactNode }[] = [
               <p className="mt-4 text-foreground" style={{ fontSize: 30 }}>{l}</p>
             </div>
           ))}
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: "Přehled 10 opatření",
+    body: (
+      <div className="flex h-full flex-col justify-center p-[100px]">
+        <Kicker>Reforma školství 8PLUS2</Kicker>
+        <h2 className="mt-5 font-display uppercase leading-[1.08] text-foreground" style={{ fontSize: 88 }}>
+          Deset opatření. <span className="text-primary">Jedna reforma.</span>
+        </h2>
+        <div className="mt-12 grid grid-cols-5 grid-rows-2 gap-6">
+          {allMeasures.map((measure) => {
+            const highlighted = measure.n === 3 || measure.n === 5;
+            return (
+              <article
+                key={measure.n}
+                data-measure={measure.n}
+                data-highlighted={highlighted}
+                className={`flex h-[290px] flex-col rounded-lg p-7 ${highlighted ? "bg-primary text-background" : "bg-foreground/10 text-foreground"}`}
+              >
+                <div className="flex items-center justify-between gap-3">
+                  <span className={`font-display leading-none ${highlighted ? "text-background" : "text-primary"}`} style={{ fontSize: 64 }}>
+                    {String(measure.n).padStart(2, "0")}
+                  </span>
+                  {highlighted && <span className="text-right font-bold uppercase leading-tight" style={{ fontSize: 18 }}>Téma<br />prezentace</span>}
+                </div>
+                <h3 className="mt-6 font-bold leading-[1.2]" style={{ fontSize: 30 }}>{measure.t}</h3>
+              </article>
+            );
+          })}
         </div>
       </div>
     ),
