@@ -157,19 +157,19 @@ const slides: { title: string; body: ReactNode }[] = [
         <div className="mt-14 grid grid-cols-2 gap-12">
           {[
             {
-              n: "05", t: "Revize inkluze",
-              items: [
-                "Průchozí třídy a specializované skupiny tam, kde to dává smysl.",
-                "Silnější pravomoci ředitelů při nastavení podpory.",
-                "Méně administrativy a efektivnější využití rozpočtu.",
-              ],
-            },
-            {
               n: "03", t: "Jednotná výstupní zkouška",
               items: [
                 "Konec chaosu přijímaček a víc klidu ve výuce.",
                 "Srovnatelná data o přidané hodnotě školy.",
                 "Lepší návaznost základního a středního vzdělávání.",
+              ],
+            },
+            {
+              n: "05", t: "Revize inkluze",
+              items: [
+                "Průchozí třídy a specializované skupiny tam, kde to dává smysl.",
+                "Silnější pravomoci ředitelů při nastavení podpory.",
+                "Méně administrativy a efektivnější využití rozpočtu.",
               ],
             },
           ].map((m) => (
