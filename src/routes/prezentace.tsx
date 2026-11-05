@@ -17,18 +17,18 @@ export const Route = createFileRoute("/prezentace")({
 });
 
 function Kicker({ children }: { children: ReactNode }) {
-  return <p className="font-semibold uppercase tracking-[0.18em] text-accent" style={{ fontSize: 26 }}>{children}</p>;
+  return <p className="font-semibold uppercase tracking-[0.18em] text-primary" style={{ fontSize: 26 }}>{children}</p>;
 }
 function Title({ children }: { children: ReactNode }) {
-  return <h2 className="font-display uppercase leading-[0.95] text-primary-foreground" style={{ fontSize: 120 }}>{children}</h2>;
+  return <h2 className="font-display uppercase leading-[0.95] text-foreground" style={{ fontSize: 120 }}>{children}</h2>;
 }
 function Point({ n, t, d }: { n: string; t: string; d: string }) {
   return (
-    <div className="flex gap-8 border-t border-primary-foreground/25 pt-7">
-      <span className="font-display text-accent" style={{ fontSize: 64, lineHeight: 1 }}>{n}</span>
+    <div className="flex gap-8 border-t border-foreground/25 pt-7">
+      <span className="font-display text-primary" style={{ fontSize: 64, lineHeight: 1 }}>{n}</span>
       <div>
-        <p className="font-bold text-primary-foreground" style={{ fontSize: 38 }}>{t}</p>
-        <p className="mt-2 text-primary-foreground/80" style={{ fontSize: 30, lineHeight: 1.3 }}>{d}</p>
+        <p className="font-bold text-foreground" style={{ fontSize: 38 }}>{t}</p>
+        <p className="mt-2 text-foreground/80" style={{ fontSize: 30, lineHeight: 1.3 }}>{d}</p>
       </div>
     </div>
   );
@@ -45,11 +45,11 @@ const slides: { title: string; body: ReactNode }[] = [
         </div>
         <div>
           <Kicker>Reforma školství 8PLUS2</Kicker>
-          <h1 className="mt-8 font-display uppercase leading-[0.92] text-primary-foreground" style={{ fontSize: 150 }}>
-            Místo devítky<br />dva roky na střední<br /><span className="text-accent">pro všechny děti</span>
+          <h1 className="mt-8 font-display uppercase leading-[0.92] text-foreground" style={{ fontSize: 150 }}>
+            Místo devítky<br />dva roky na střední<br /><span className="text-primary">pro všechny děti</span>
           </h1>
         </div>
-        <p className="text-primary-foreground/80" style={{ fontSize: 32 }}>Revize inkluze · Jednotná výstupní zkouška · restartskolstvi.cz</p>
+        <p className="text-foreground/80" style={{ fontSize: 32 }}>Revize inkluze · Jednotná výstupní zkouška · restartskolstvi.cz</p>
       </div>
     ),
   },
@@ -60,7 +60,7 @@ const slides: { title: string; body: ReactNode }[] = [
         <div className="flex flex-col justify-center">
           <Kicker>Opatření 05</Kicker>
           <div className="mt-6"><Title>Revize<br />inkluze</Title></div>
-          <p className="mt-10 text-primary-foreground/85" style={{ fontSize: 36, lineHeight: 1.3 }}>
+          <p className="mt-10 text-foreground/85" style={{ fontSize: 36, lineHeight: 1.3 }}>
             Zachováváme princip podpory znevýhodněných, ale radikálně měníme formu.
           </p>
         </div>
@@ -79,7 +79,7 @@ const slides: { title: string; body: ReactNode }[] = [
         <div className="flex flex-col justify-center">
           <Kicker>Opatření 03</Kicker>
           <div className="mt-6"><Title>Jednotná<br />výstupní<br />zkouška</Title></div>
-          <p className="mt-10 text-primary-foreground/85" style={{ fontSize: 36, lineHeight: 1.3 }}>
+          <p className="mt-10 text-foreground/85" style={{ fontSize: 36, lineHeight: 1.3 }}>
             Jedna zkouška na konci osmé třídy místo chaosu přijímaček.
           </p>
         </div>
@@ -96,8 +96,8 @@ const slides: { title: string; body: ReactNode }[] = [
     body: (
       <div className="flex h-full flex-col justify-center p-[120px]">
         <Kicker>Víc než kratší základka</Kicker>
-        <div className="mt-6"><Title>Komplexní balík<br /><span className="text-accent">10 opatření</span></Title></div>
-        <p className="mt-10 max-w-[1300px] text-primary-foreground/85" style={{ fontSize: 36, lineHeight: 1.3 }}>
+        <div className="mt-6"><Title>Komplexní balík<br /><span className="text-primary">10 opatření</span></Title></div>
+        <p className="mt-10 max-w-[1300px] text-foreground/85" style={{ fontSize: 36, lineHeight: 1.3 }}>
           Reforma 8PLUS2 neřeší jen délku základní školy. Nabízí řešení pro přijímačky, inkluzi, maturity, financování, administrativu i propojení škol s praxí.
         </p>
         <div className="mt-16 grid grid-cols-3 gap-10">
@@ -106,9 +106,9 @@ const slides: { title: string; body: ReactNode }[] = [
             ["Kvalita", "Zkoušky, maturity, data"],
             ["Efektivita", "Financování a řízení škol"],
           ].map(([v, l]) => (
-            <div key={v} className="rounded-2xl border border-primary-foreground/25 bg-primary-foreground/10 p-10">
-              <p className="font-display uppercase text-accent" style={{ fontSize: 72, lineHeight: 1 }}>{v}</p>
-              <p className="mt-4 text-primary-foreground" style={{ fontSize: 30 }}>{l}</p>
+            <div key={v} className="rounded-2xl border border-foreground/25 bg-foreground/10 p-10">
+              <p className="font-display uppercase text-primary" style={{ fontSize: 72, lineHeight: 1 }}>{v}</p>
+              <p className="mt-4 text-foreground" style={{ fontSize: 30 }}>{l}</p>
             </div>
           ))}
         </div>
@@ -120,11 +120,11 @@ const slides: { title: string; body: ReactNode }[] = [
     body: (
       <div className="flex h-full flex-col items-center justify-center p-[120px] text-center">
         <img src="/media/8plus2-logo.svg" alt="8PLUS2" style={{ height: 110 }} />
-        <h2 className="mt-14 font-display uppercase leading-[0.95] text-primary-foreground" style={{ fontSize: 130 }}>
-          Skutečná reforma,<br /><span className="text-accent">ne dílčí změny</span>
+        <h2 className="mt-14 font-display uppercase leading-[0.95] text-foreground" style={{ fontSize: 130 }}>
+          Skutečná reforma,<br /><span className="text-primary">ne dílčí změny</span>
         </h2>
-        <p className="mt-12 text-primary-foreground/85" style={{ fontSize: 40 }}>Všech 10 opatření najdete na</p>
-        <p className="mt-3 font-bold text-primary-foreground" style={{ fontSize: 56 }}>restartskolstvi.cz</p>
+        <p className="mt-12 text-foreground/85" style={{ fontSize: 40 }}>Všech 10 opatření najdete na</p>
+        <p className="mt-3 font-bold text-foreground" style={{ fontSize: 56 }}>restartskolstvi.cz</p>
         <img src="/media/ods-logo.png" alt="ODS" className="mt-16" style={{ height: 90 }} />
       </div>
     ),
@@ -183,7 +183,7 @@ function Presentation() {
         ))}
       </div>
 
-      <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-3 rounded-full bg-primary/70 px-3 py-1.5 text-sm text-primary-foreground backdrop-blur" onClick={(e) => e.stopPropagation()}>
+      <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-3 rounded-full bg-background/60 px-3 py-1.5 text-sm text-foreground backdrop-blur" onClick={(e) => e.stopPropagation()}>
         <button aria-label="Předchozí snímek" onClick={() => go(-1)} disabled={index === 0} className="rounded-full p-1 disabled:opacity-30"><ChevronLeft className="h-5 w-5" /></button>
         <span className="tabular-nums">{index + 1} / {total}</span>
         <button aria-label="Další snímek" onClick={() => go(1)} disabled={index === total - 1} className="rounded-full p-1 disabled:opacity-30"><ChevronRight className="h-5 w-5" /></button>
