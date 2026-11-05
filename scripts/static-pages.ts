@@ -11,7 +11,7 @@ const basePaths = [
   ...allMeasures.map((measure) => `/opatreni/${measure.slug}`),
 ];
 
-export const staticPagePaths = [...basePaths, ...basePaths.map((path) => (path === "/" ? "/verze-2" : `/verze-2${path}`))];
+export const staticPagePaths = [...basePaths, ...basePaths.map((path) => (path === "/" ? "/verze-2" : `/verze-2${path}`)), "/prezentace"];
 
 export const staticPrerenderOptions = {
   pages: staticPagePaths.map((path) => ({ path })),
