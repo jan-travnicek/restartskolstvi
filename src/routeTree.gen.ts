@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as DataRouteImport } from './routes/data'
 import { Route as MytyAFaktaRouteImport } from './routes/myty-a-fakta'
 import { Route as OdbornaOporaRouteImport } from './routes/odborna-opora'
+import { Route as PrezentaceRouteImport } from './routes/prezentace'
 import { Route as ProKohoRouteImport } from './routes/pro-koho'
 import { Route as OpatreniIndexRouteImport } from './routes/opatreni.index'
 import { Route as OpatreniSlugRouteImport } from './routes/opatreni.$slug'
@@ -42,6 +43,11 @@ const MytyAFaktaRoute = MytyAFaktaRouteImport.update({
 const OdbornaOporaRoute = OdbornaOporaRouteImport.update({
   id: '/odborna-opora',
   path: '/odborna-opora',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrezentaceRoute = PrezentaceRouteImport.update({
+  id: '/prezentace',
+  path: '/prezentace',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProKohoRoute = ProKohoRouteImport.update({
@@ -100,6 +106,7 @@ export interface FileRoutesByFullPath {
   '/data': typeof DataRoute
   '/myty-a-fakta': typeof MytyAFaktaRoute
   '/odborna-opora': typeof OdbornaOporaRoute
+  '/prezentace': typeof PrezentaceRoute
   '/pro-koho': typeof ProKohoRoute
   '/opatreni/$slug': typeof OpatreniSlugRoute
   '/verze-2/data': typeof Verze2DataRoute
@@ -116,6 +123,7 @@ export interface FileRoutesByTo {
   '/data': typeof DataRoute
   '/myty-a-fakta': typeof MytyAFaktaRoute
   '/odborna-opora': typeof OdbornaOporaRoute
+  '/prezentace': typeof PrezentaceRoute
   '/pro-koho': typeof ProKohoRoute
   '/opatreni/$slug': typeof OpatreniSlugRoute
   '/verze-2/data': typeof Verze2DataRoute
@@ -133,6 +141,7 @@ export interface FileRoutesById {
   '/data': typeof DataRoute
   '/myty-a-fakta': typeof MytyAFaktaRoute
   '/odborna-opora': typeof OdbornaOporaRoute
+  '/prezentace': typeof PrezentaceRoute
   '/pro-koho': typeof ProKohoRoute
   '/opatreni/$slug': typeof OpatreniSlugRoute
   '/verze-2/data': typeof Verze2DataRoute
@@ -151,6 +160,7 @@ export interface FileRouteTypes {
     | '/data'
     | '/myty-a-fakta'
     | '/odborna-opora'
+    | '/prezentace'
     | '/pro-koho'
     | '/opatreni/$slug'
     | '/verze-2/data'
@@ -167,6 +177,7 @@ export interface FileRouteTypes {
     | '/data'
     | '/myty-a-fakta'
     | '/odborna-opora'
+    | '/prezentace'
     | '/pro-koho'
     | '/opatreni/$slug'
     | '/verze-2/data'
@@ -183,6 +194,7 @@ export interface FileRouteTypes {
     | '/data'
     | '/myty-a-fakta'
     | '/odborna-opora'
+    | '/prezentace'
     | '/pro-koho'
     | '/opatreni/$slug'
     | '/verze-2/data'
@@ -200,6 +212,7 @@ export interface RootRouteChildren {
   DataRoute: typeof DataRoute
   MytyAFaktaRoute: typeof MytyAFaktaRoute
   OdbornaOporaRoute: typeof OdbornaOporaRoute
+  PrezentaceRoute: typeof PrezentaceRoute
   ProKohoRoute: typeof ProKohoRoute
   OpatreniSlugRoute: typeof OpatreniSlugRoute
   Verze2DataRoute: typeof Verze2DataRoute
@@ -240,6 +253,13 @@ declare module '@tanstack/react-router' {
       path: '/odborna-opora'
       fullPath: '/odborna-opora'
       preLoaderRoute: typeof OdbornaOporaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prezentace': {
+      id: '/prezentace'
+      path: '/prezentace'
+      fullPath: '/prezentace'
+      preLoaderRoute: typeof PrezentaceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pro-koho': {
@@ -320,6 +340,7 @@ const rootRouteChildren: RootRouteChildren = {
   DataRoute: DataRoute,
   MytyAFaktaRoute: MytyAFaktaRoute,
   OdbornaOporaRoute: OdbornaOporaRoute,
+  PrezentaceRoute: PrezentaceRoute,
   ProKohoRoute: ProKohoRoute,
   OpatreniSlugRoute: OpatreniSlugRoute,
   Verze2DataRoute: Verze2DataRoute,
