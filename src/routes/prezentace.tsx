@@ -45,7 +45,7 @@ const slides: { title: string; body: ReactNode }[] = [
           <img src="/media/ods-logo.png" alt="ODS" style={{ height: 110 }} />
         </div>
         <div>
-          <Kicker>Reforma školství 8PLUS2</Kicker>
+          <Kicker>VIZE ODS PRO VZDĚLANÉ ČESKO</Kicker>
           <h1 className="mt-8 font-display uppercase leading-[1.08] text-foreground" style={{ fontSize: 150 }}>
             Místo devítky<br />dva roky na střední<br /><span className="text-primary">pro všechny děti</span>
           </h1>
