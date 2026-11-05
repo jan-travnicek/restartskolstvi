@@ -20,7 +20,7 @@ function Kicker({ children }: { children: ReactNode }) {
   return <p className="font-semibold uppercase tracking-[0.18em] text-primary" style={{ fontSize: 26 }}>{children}</p>;
 }
 function Title({ children }: { children: ReactNode }) {
-  return <h2 className="font-display uppercase leading-[0.95] text-foreground" style={{ fontSize: 120 }}>{children}</h2>;
+  return <h2 className="font-display uppercase leading-[1.08] text-foreground" style={{ fontSize: 120 }}>{children}</h2>;
 }
 function Point({ n, t, d }: { n: string; t: string; d: string }) {
   return (
@@ -45,7 +45,7 @@ const slides: { title: string; body: ReactNode }[] = [
         </div>
         <div>
           <Kicker>Reforma školství 8PLUS2</Kicker>
-          <h1 className="mt-8 font-display uppercase leading-[0.92] text-foreground" style={{ fontSize: 150 }}>
+          <h1 className="mt-8 font-display uppercase leading-[1.08] text-foreground" style={{ fontSize: 150 }}>
             Místo devítky<br />dva roky na střední<br /><span className="text-primary">pro všechny děti</span>
           </h1>
         </div>
@@ -120,7 +120,7 @@ const slides: { title: string; body: ReactNode }[] = [
     body: (
       <div className="flex h-full flex-col items-center justify-center p-[120px] text-center">
         <img src="/media/8plus2-logo.svg" alt="8PLUS2" style={{ height: 110 }} />
-        <h2 className="mt-14 font-display uppercase leading-[0.95] text-foreground" style={{ fontSize: 130 }}>
+        <h2 className="mt-14 font-display uppercase leading-[1.08] text-foreground" style={{ fontSize: 130 }}>
           Skutečná reforma,<br /><span className="text-primary">ne dílčí změny</span>
         </h2>
         <p className="mt-12 text-foreground/85" style={{ fontSize: 40 }}>Všech 10 opatření najdete na</p>
