@@ -149,6 +149,49 @@ const slides: { title: string; body: ReactNode }[] = [
     ),
   },
   {
+    title: "Opatření pohledem škol",
+    body: (
+      <div className="flex h-full flex-col justify-center p-[110px]">
+        <Kicker>Pro ředitele a učitele</Kicker>
+        <div className="mt-5"><Title>Opatření <span className="text-primary">pohledem škol</span></Title></div>
+        <div className="mt-14 grid grid-cols-2 gap-12">
+          {[
+            {
+              n: "05", t: "Revize inkluze",
+              items: [
+                "Průchozí třídy a specializované skupiny tam, kde to dává smysl.",
+                "Silnější pravomoci ředitelů při nastavení podpory.",
+                "Méně administrativy a efektivnější využití rozpočtu.",
+              ],
+            },
+            {
+              n: "03", t: "Jednotná výstupní zkouška",
+              items: [
+                "Konec chaosu přijímaček a víc klidu ve výuce.",
+                "Srovnatelná data o přidané hodnotě školy.",
+                "Lepší návaznost základního a středního vzdělávání.",
+              ],
+            },
+          ].map((m) => (
+            <div key={m.n} className="rounded-2xl border border-foreground/25 bg-foreground/10 p-12">
+              <div className="flex items-baseline gap-6">
+                <span className="font-display text-primary" style={{ fontSize: 80, lineHeight: 1 }}>{m.n}</span>
+                <h3 className="font-display uppercase text-foreground" style={{ fontSize: 56, lineHeight: 1.1 }}>{m.t}</h3>
+              </div>
+              <ul className="mt-8 space-y-5">
+                {m.items.map((it) => (
+                  <li key={it} className="flex gap-4 text-foreground/90" style={{ fontSize: 30, lineHeight: 1.3 }}>
+                    <span className="text-primary">■</span><span>{it}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    ),
+  },
+  {
     title: "Nový senátor pro školství",
     body: (
       <div className="flex h-full flex-col justify-center p-[100px]">
