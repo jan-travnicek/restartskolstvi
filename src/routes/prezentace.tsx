@@ -287,6 +287,9 @@ function Presentation() {
             {s.body}
           </section>
         ))}
+        {index !== 0 && (
+          <img src="/media/ods-logo.png" alt="ODS" className="pointer-events-none absolute" style={{ top: 60, right: 80, height: 80 }} />
+        )}
       </div>
 
       <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-3 rounded-full bg-background/60 px-3 py-1.5 text-sm text-foreground backdrop-blur" onClick={(e) => e.stopPropagation()}>
